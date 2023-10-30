@@ -1,0 +1,12 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI';
+  color: white;
+}
+
+body {
+  background-image: url('images/windy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
