@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ethan Wen | Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bulma -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  />
+
+  <!-- Fonts (optional but recommended) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ---------- Base ---------- */
+    html, body {
+      height: 100%;
+      font-family: "Inter", system-ui, sans-serif;
+      background: #0f1220;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ---------- Background ---------- */
+    .bg {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+      filter: brightness(0.45) saturate(0.95);
+    }
+
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 18, 32, 0.35);
+      z-index: 1;
+     pointer-events: none;
+    }
+
+    /* ---------- Layering ---------- */
+    .nav-wrapper {
+      position: fixed;
+      z-index: 3;
+    }
+
+    .hero {
+      position: relative;
+     z-index: 2;
+    }
+
+    /* ---------- SwiftUI-style nav ---------- */
+    .nav-wrapper {
+      position: fixed;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      padding: 0.4rem;
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .nav-item {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-item:hover {
+      background: rgba(255, 255, 255, 0.174);
+      color: white;
+    }
+
+    .nav-item.active {
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+    }
+
+    /* ---------- Hero content ---------- */
+    .hero.is-fullheight {
+      background: transparent;
+    }
+
+    .hero-body {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .title {
+      color: rgba(255, 255, 255, 0.726);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.726);
+      max-width: 36rem;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background -->
+  <img class="bg" src="assets/background-static.png" alt="Background" />
+
+  <!-- Background overlay -->
+  <div class="bg-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav-wrapper">
+    <a class="nav-item" href="index.html">Home</a>
+    <a class="nav-item active" href="projects.html">Projects</a>
+    <a class="nav-item" href="resume.html">Resume</a>
+    <a class="nav-item" href="about.html">About</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+  <div class="hero-body" style="justify-content: flex-start; padding-top: 6rem;">
+    <div class="container">
+      <h1 class="title is-2">Projects</h1>
+      <p class="subtitle is-5 mt-2">
+        A collection of my work in embedded systems, hardware–software interfaces, and applied research.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Scroll test area (adds extra height so you can verify scrolling) -->
+<section class="scroll-test">
+<div class="container">
+    <h2 class="title is-3">Scroll test</h2>
+    <p>Scroll down to verify the page scrolls correctly.</p>
+    <div style="height:1600px;"></div>
+    <p>End of scroll test area.</p>
+</div>
+</section>
+</body>
+</html>

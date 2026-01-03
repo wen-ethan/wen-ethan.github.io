@@ -1,158 +1,151 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home</title>
-    <link rel="icon" type="image/jpeg" sizes="736x736" href="assets/img/Main%20Profile.jpg">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/Footer-Clean-icons.css">
+  <meta charset="UTF-8" />
+  <title>Ethan Wen | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bulma -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  />
+
+  <!-- Fonts (optional but recommended) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ---------- Base ---------- */
+    html, body {
+      height: 100%;
+      font-family: "Inter", system-ui, sans-serif;
+      background: #0f1220;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* ---------- Background ---------- */
+    .bg {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+      filter: brightness(0.45) saturate(0.95);
+    }
+
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 18, 32, 0.35);
+      z-index: 1;
+     pointer-events: none;
+    }
+
+    /* ---------- Layering ---------- */
+    .nav-wrapper {
+      position: fixed;
+      z-index: 3;
+    }
+
+    .hero {
+      position: relative;
+     z-index: 2;
+    }
+
+    /* ---------- SwiftUI-style nav ---------- */
+    .nav-wrapper {
+      position: fixed;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      padding: 0.4rem;
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .nav-item {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-item:hover {
+      background: rgba(255, 255, 255, 0.174);
+      color: white;
+    }
+
+    .nav-item.active {
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+    }
+
+    /* ---------- Hero content ---------- */
+    .hero.is-fullheight {
+      background: transparent;
+    }
+
+    .hero-body {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .title {
+      color: rgba(255, 255, 255, 0.726);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.726);
+      max-width: 36rem;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+  </style>
 </head>
 
 <body>
-    <header class="bg-dark">
-        <nav class="navbar navbar-expand-md sticky-top py-3 navbar-dark" id="mainNav">
-            <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><img class="rounded" src="assets/img/Main%20Profile.jpg" style="width: 2rem;padding-right: 0px;margin-right: 8px;"><span>c2h6</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#start">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#projects">Projects</a></li>
-                        <li class="nav-item"></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="container pt-4 pt-xl-5">
-            <div class="row pt-5" id="start" style="padding-bottom: 55px;margin-left: 13px;margin-right: 13px;">
-                <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
-                    <div class="text-center">
-                        <h1 class="fw-bold">I'm a 17-year old student in the USA.</h1>
-                        <h6 class="fw-bold"><span style="font-weight: normal !important;">yes, im tired all the time.</span></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="py-5">
-        <div></div>
-        <div class="col">
-            <header></header>
-        </div>
-        <header></header>
-        <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
-            <div class="text-center" style="margin-left: 13px; margin-right: 13px;">
-                <h2 class="fw-bold">About me.</h2>
-                <p>avid programmer, student, and great at suffering</p>
-                <p>notice how everything's like... not there? yeah thats just me being bad at this :( itll work out i promise</p>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container-fluid bg-dark py-5">
-            <div class="row">
-                <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h3 class="fw-bold">Fun Facts!!</h3>
-                </div>
-            </div>
-            <div class="py-2 p-lg-5">
-                <div class="row gx-3 row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;margin-bottom: -93px;">
-                    <div class="col-auto col-lg-12 mb-5">
-                        <div class="card shadow-sm">
-                            <div class="card-body px-4 py-1 px-md-5">
-                                <p class="text-center text-muted card-text mb-4"><br> I Am amAzing at programming<br> I love ap physics c: mechanics (no i dont)<br> I also definetly love ap physics c: electricity and magnetism (no i dont)<br> I definetly know what im doing with this website</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid bg-dark py-5">
-            <div class="row">
-                <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2 class="fw-bold" id="skills">Skills</h2>
-                </div>
-            </div>
-            <div class="py-2 p-lg-5">
-                <div class="row gx-3 row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;margin-bottom: -93px;">
-                    <div class="col-auto col-lg-12 mb-5">
-                        <div class="card shadow-sm">
-                            <div class="card-body px-4 py-1 px-md-5">
-                                <p class="text-center text-muted card-text mb-4"><br>amazing that this is empty,,,, i think you know what that means</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid bg-dark py-5">
-            <section class="py-5">
-                <div class="row mb-5">
-                    <div class="col-md-8 col-xl-6 text-center mx-auto">
-                        <h2 class="fw-bold" id="projects">Projects</h2>
-                        <p class="text-muted">Here are some notable projects!</p>
-                    </div>
-                </div>
-                <div class="container py-5">
-                    <div class="col-lg-12">
-                        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
-                            <div class="col mb-4">
-                                <div><a href="https://wen-ethan.github.io/ap-physics-notes/mechanics.html"><img class="rounded img-fluid shadow w-100 fit-cover" src="assets/img/thumbnails/physics.png" style="height: 250px;"></a>
-                                    <div class="py-4"><span class="badge bg-primary mb-2">Website</span>
-                                        <h4 class="fw-bold"><a href="https://wen-ethan.github.io/ap-physics-notes/mechanics.html">AP Physics C Notes</a></h4>
-                                        <p class="text-muted">Website with my notes for AP Physics C: Electricity and Magnetism. AP Physics C: Mechanics coming sometime.</p>
-                                        <p class="text-muted"><a href="#">Link to GitHub Repository</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-4">
-                                <div><a href="https://github.com/wen-ethan/nchs-memberapp"><img class="rounded img-fluid shadow w-100 fit-cover" src="assets/img/thumbnails/nchs.png" style="height: 250px;"></a>
-                                    <div class="py-4"><span class="badge bg-primary mb-2">GitHub Repo</span>
-                                        <h4 class="fw-bold"><a href="https://github.com/wen-ethan/nchs-memberapp">Google Form Autofill AppScript</a></h4>
-                                        <p class="text-muted">Google AppScript workflow that automates the process of filling out and emailing official member applications for the National Chinese Honors Society using responses from a Google Form.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
-    <section></section>
-    <footer class="bg-dark">
-        <div class="container py-4 py-lg-5">
-            <hr>
-            <footer class="text-center py-4">
-                <div class="container">
-                    <div class="row row-cols-1 row-cols-lg-3">
-                        <div class="col-lg-6">
-                            <p class="text-muted my-2">2024 c2h6</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-inline my-2">
-                                <li class="list-inline-item me-4"><a href="https://github.com/wen-ethan">
-                                        <div class="bs-icon-circle bs-icon-primary bs-icon" href="youtube.com"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github">
-                                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
-                                            </svg></div>
-                                    </a></li>
-                                <li class="list-inline-item me-4"></li>
-                                <li class="list-inline-item"><a href="https://www.instagram.com/wenn.ethan/">
-                                        <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-instagram">
-                                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
-                                            </svg></div>
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/bold-and-dark.js"></script>
-</body>
+  <!-- Background video -->
+  <video class="bg" autoplay muted loop playsinline>
+    <source src="assets/background-video.mp4" type="video/mp4" />
+  </video>
 
+  <!-- Background overlay -->
+  <div class="bg-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav-wrapper">
+    <a class="nav-item active" href="index.html">Home</a>
+    <a class="nav-item" href="projects.html">Projects</a>
+    <a class="nav-item" href="resume.html">Resume</a>
+    <a class="nav-item" href="about.html">About</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1">Ethan Wen</h1>
+        <p class="subtitle is-5 mt-4">
+          Engineering student interested in embedded systems,
+          hardware–software interfaces, and applied research.
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
 </html>
