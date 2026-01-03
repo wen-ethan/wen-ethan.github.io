@@ -19,103 +19,7 @@
     rel="stylesheet"
   />
 
-  <style>
-    /* ---------- Base ---------- */
-    html, body {
-      height: 100%;
-      font-family: "Inter", system-ui, sans-serif;
-      background: #42253f;
-      color: white;
-      overflow-x: hidden;
-    }
-
-    /* ---------- Background ---------- */
-    .bg {
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: 0;
-      pointer-events: none;
-      filter: brightness(0.45) saturate(0.95);
-    }
-
-    .bg-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 18, 32, 0.35);
-      z-index: 1;
-     pointer-events: none;
-    }
-
-    /* ---------- Layering ---------- */
-    .nav-wrapper {
-      position: fixed;
-      z-index: 3;
-    }
-
-    .hero {
-      position: relative;
-     z-index: 2;
-    }
-
-    /* ---------- SwiftUI-style nav ---------- */
-    .nav-wrapper {
-      position: fixed;
-      top: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      border-radius: 999px;
-      padding: 0.4rem;
-      display: flex;
-      gap: 0.25rem;
-    }
-
-    .nav-item {
-      padding: 0.45rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.75);
-      text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .nav-item:hover {
-      background: rgba(255, 255, 255, 0.174);
-      color: white;
-    }
-
-    .nav-item.active {
-      background: rgba(255, 255, 255, 0.25);
-      color: white;
-    }
-
-    /* ---------- Hero content ---------- */
-    .hero.is-fullheight {
-      background: transparent;
-    }
-
-    .hero-body {
-      justify-content: center;
-      text-align: center;
-    }
-
-    .title {
-      color: rgba(255, 255, 255, 0.726);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .subtitle {
-      color: rgba(255, 255, 255, 0.726);
-      max-width: 36rem;
-      margin: 0 auto;
-      opacity: 0.85;
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
 <body>
@@ -135,7 +39,7 @@
 
   <!-- Hero -->
   <section class="hero">
-  <div class="hero-body" style="justify-content: flex-start; padding-top: 6rem;">
+  <div class="hero-body" style="justify-content: flex-start; padding-top: 7rem;">
     <div class="container">
       <h1 class="title is-2">About Me</h1>
       <p class="subtitle is-5 mt-2">
