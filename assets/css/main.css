@@ -197,7 +197,6 @@ opacity: 0.85;
   .project-image {
     order: -1;
     width: 100%;
-    /* aspect-ratio: 16 / 9; */
   }
 
   .project-title {
