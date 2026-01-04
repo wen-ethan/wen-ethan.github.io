@@ -124,6 +124,7 @@
       width: 100%;
       height: auto;
       display: block;
+      aspect-ratio: 16/9;
       border-radius: 24px;
     }
     .carousel-controls {
@@ -140,6 +141,7 @@
       font-weight: 500;
       margin-right: 0.6rem;
       margin-top: 0.75rem;
+      border: 0;
     }
 
 
@@ -160,9 +162,6 @@
       }
     }
   </style>
-<!-- Swiper CSS/JS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -225,22 +224,22 @@
     <p>© 2026 Ethan Wen</p>
   </div>
   <script>
-const slides = document.querySelectorAll('.carousel-slide');
-let index = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    let index = 0;
 
-function showSlide(i) {
-  slides.forEach((s, idx) => s.style.display = idx === i ? 'block' : 'none');
-}
-showSlide(index);
+    function showSlide(i) {
+      slides.forEach((s, idx) => s.style.display = idx === i ? 'block' : 'none');
+    }
+    showSlide(index);
 
-document.querySelector('.carousel-next').onclick = () => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
-};
-document.querySelector('.carousel-prev').onclick = () => {
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
-};
-</script>
+    document.querySelector('.carousel-next').onclick = () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    };
+    document.querySelector('.carousel-prev').onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    };
+  </script>
 </body>
 </html>
