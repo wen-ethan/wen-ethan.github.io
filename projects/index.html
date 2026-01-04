@@ -19,6 +19,7 @@
     rel="stylesheet"
   />
 
+  <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
@@ -49,14 +50,58 @@
   </div>
 </section>
 
-<!-- Scroll test area (adds extra height so you can verify scrolling) -->
-<section class="scroll-test page-section">
-<div class="container">
-    <h2 class="title is-3">Scroll test</h2>
-    <p>Scroll down to verify the page scrolls correctly.</p>
-    <div style="height:1600px;"></div>
-    <p>End of scroll test area.</p>
-</div>
+<!-- Projects Section -->
+<section class="projects-section page-section">
+  <div class="container">
+    <div class="projects-grid">
+      <!-- Project cards -->
+
+      <a class="project-card" href="/projects/esp32-console/">
+        <div class="project-image">
+          <img src="/assets/background-static.png" alt="ESP32 Handheld Console">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">ESP32 Handheld Console</h3>
+          <p class="project-description">
+            A custom-built handheld gaming console inspired by the Arduboy,
+            featuring an ESP32, OLED display, and cartridge-based SD storage.
+          </p>
+        </div>
+      </a>
+
+      <a class="project-card" href="/projects/wifi-bridge/">
+        <div class="project-image">
+          <img src="/assets/background-static.png" alt="WiFi–Ethernet Bridge">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">WiFi–Ethernet Bridge</h3>
+          <p class="project-description">
+            A plug-and-play Raspberry Pi-based WiFi to Ethernet bridge with VPN
+            support and Ethernet gadget mode.
+          </p>
+        </div>
+      </a>
+
+      <a class="project-card image-right" href="/projects/wifi-bridge/">
+        <div class="project-content">
+          <h3 class="project-title">WiFi–Ethernet Bridge</h3>
+          <p class="project-description">
+            A plug-and-play Raspberry Pi-based WiFi to Ethernet bridge with VPN
+            support and Ethernet gadget mode.
+          </p>
+        </div>
+        <div class="project-image">
+          <img src="/assets/background-static.png" alt="WiFi–Ethernet Bridge">
+        </div>
+      </a>
+
+    </div>
+  </div>
 </section>
+
+<!-- Footer -->
+<div class="page-footer">
+  <p>© 2026 Ethan Wen</p>
+</div>
 </body>
 </html>
