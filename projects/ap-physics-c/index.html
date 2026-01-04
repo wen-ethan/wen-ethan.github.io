@@ -17,151 +17,8 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/main.css">
 
-  <style>
-    /* Project page specific */
-    .project-shell {
-      max-width: 1100px;
-      margin: 7rem auto;
-      padding: 2rem;
-      border-radius: 40px;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      margin-bottom: 0;
-    }
-
-    .project-header {
-      text-align: center;
-      margin-bottom: 1.25rem;
-    }
-
-    .project-tags {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.75rem;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .media-box {
-      border-radius: 14px;
-      overflow: hidden;
-      background: rgba(0,0,0,0.25);
-    }
-
-    .media-box img,
-    .media-box video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .project-content p {
-      line-height: 1.65;
-    }
-
-    .project-links a {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      font-weight: 500;
-      margin-right: 0.6rem;
-      margin-top: 0.75rem;
-    }
-
-    .back-link {
-      margin-top: 2rem;
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      padding: 0.55rem 1.05rem;
-      border-radius: 999px;
-
-
-      background: rgba(255,255,255,0.14);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: #ffffff;
-
-      opacity: 0.9;
-      transition: opacity 0.15s ease, transform 0.15s ease;
-    }
-
-    .back-link:hover {
-      opacity: 1;
-      transform: translateY(-1px);
-    }
-
-    .project-content {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-
-    .project-carousel {
-      position: relative;
-      width: 100%;
-      max-width: 540px;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 24px;
-    }
-
-    .carousel-slide {
-      display: none;
-      width: 100%;
-    }
-
-    .carousel-slide img,
-    .carousel-slide video {
-      width: 100%;
-      height: auto;
-      display: block;
-      aspect-ratio: 16/9;
-      border-radius: 24px;
-    }
-    .carousel-controls {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 0.5rem;
-    }
-
-    .carousel-controls button {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      font-weight: 500;
-      margin-right: 0.6rem;
-      margin-top: 0.75rem;
-      border: 0;
-    }
-
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .project-shell {
-        margin: 6rem 1rem;
-        padding: 1.5rem;
-        margin-bottom: 0;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-header h1 {
-        font-size: 1.75rem;
-      }
-    }
-  </style>
+  <!-- Project-specific CSS -->
+  <link rel="stylesheet" href="/assets/css/project-page.css">
 </head>
 
 <body>
@@ -178,30 +35,33 @@
   <!-- Project -->
   <section class="project-shell">
     <header class="project-header">
-      <h1 class="title is-3">AP Physics C</h1>
+      <h1 class="title is-3" style="margin-bottom: 0.5rem;">AP Physics C</h1>
       <div class="project-tags">
         <span class="tag is-dark">Embedded</span>
-        <span class="tag is-dark">C++</span>
+        <span class="tag is-dark">html</span>
         <span class="tag is-dark">Physics</span>
       </div>
     </header>
 
     <div class="project-grid">
       <!-- Media -->
-      <!-- <div class="media-box">
-        <img src="/assets/thumbnails/ap-physics-c.png" alt="Project preview" />
-      </div> -->
-      <div>
       <div class="project-carousel media-box">
         <div class="carousel-slide"><img src="/assets/backgrounds/background-static-original.png" /></div>
         <div class="carousel-slide"><video src="/assets/backgrounds/background-video.mp4" controls></video></div>
         <div class="carousel-slide"><img src="/assets/thumbnails/ap-physics-c.png" /></div>
+
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
+
+        <!-- Carousel controls -->
+        <button class="carousel-prev">←</button>
+        <button class="carousel-next">→</button>
       </div>
-      <div class="carousel-controls">
-        <button class="carousel-prev">‹</button>
-        <button class="carousel-next">›</button>
-      </div>
-      </div>
+
       <!-- Content -->
       <div class="project-content">
         <p>
@@ -211,6 +71,7 @@
         </p>
 
         <div class="project-links">
+          <a class="button is-link is-light" href="/about/">Website</a>
           <a class="button is-link is-light" href="#">GitHub Repo</a>
         </div>
 
@@ -223,23 +84,6 @@
   <div class="page-footer">
     <p>© 2026 Ethan Wen</p>
   </div>
-  <script>
-    const slides = document.querySelectorAll('.carousel-slide');
-    let index = 0;
-
-    function showSlide(i) {
-      slides.forEach((s, idx) => s.style.display = idx === i ? 'block' : 'none');
-    }
-    showSlide(index);
-
-    document.querySelector('.carousel-next').onclick = () => {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    };
-    document.querySelector('.carousel-prev').onclick = () => {
-      index = (index - 1 + slides.length) % slides.length;
-      showSlide(index);
-    };
-  </script>
+  <script src="/assets/js/project-carousel.js"></script>
 </body>
 </html>
