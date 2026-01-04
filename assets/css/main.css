@@ -21,6 +21,10 @@ html, body {
     /* filter: brightness(0.45) saturate(0.95); */ /* try to add this as a actual filter on the images, rather than html filter */
 }
 
+.bg-video {
+    filter: brightness(0.45) saturate(0.95);
+}
+
 .bg-overlay {
     position: fixed;
     inset: 0;
@@ -130,7 +134,7 @@ html, body {
     text-decoration: none;
     color: inherit;
     background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px); /* Reduced blur for speed */
+    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     transition: transform 0.2s ease, background 0.2s ease;
     will-change: transform;
@@ -167,7 +171,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 1rem 0 4rem;
 }
 
 .project-title {
@@ -201,6 +205,10 @@ html, body {
 
     .project-description {
         max-width: none;
+    }
+
+    .project-content {
+        padding: 0.25rem;
     }
 }
 

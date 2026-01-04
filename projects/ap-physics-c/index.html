@@ -2,68 +2,245 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ethan Wen | About Me</title>
+  <title>Ethan Wen | Project</title>
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <!-- Bulma -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/main.css">
+
+  <style>
+    /* Project page specific */
+    .project-shell {
+      max-width: 1100px;
+      margin: 7rem auto;
+      padding: 2rem;
+      border-radius: 40px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      margin-bottom: 0;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-tags {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .media-box {
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.25);
+    }
+
+    .media-box img,
+    .media-box video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .project-content p {
+      line-height: 1.65;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 500;
+      margin-right: 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+    .back-link {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 0.55rem 1.05rem;
+      border-radius: 999px;
+
+
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #ffffff;
+
+      opacity: 0.9;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .project-content {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .project-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .carousel-slide {
+      display: none;
+      width: 100%;
+    }
+
+    .carousel-slide img,
+    .carousel-slide video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+    }
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+
+    .carousel-controls button {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 500;
+      margin-right: 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .project-shell {
+        margin: 6rem 1rem;
+        padding: 1.5rem;
+        margin-bottom: 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-header h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+<!-- Swiper CSS/JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
 
 <body>
   <!-- Background -->
   <img class="bg" src="/assets/backgrounds/background-static.png" />
 
-  <!-- Background overlay -->
-  <div class="bg-overlay"></div>
-
   <!-- Navigation -->
   <nav class="nav-wrapper">
     <a class="nav-item" href="/">Home</a>
-    <a class="nav-item" href="/projects/">Projects</a>
+    <a class="nav-item active" href="/projects/">Projects</a>
     <a class="nav-item" href="/resume/">Resume</a>
-    <a class="nav-item active" href="/about/">About</a>
+    <a class="nav-item" href="/about/">About</a>
   </nav>
+  <!-- Project -->
+  <section class="project-shell">
+    <header class="project-header">
+      <h1 class="title is-3">AP Physics C</h1>
+      <div class="project-tags">
+        <span class="tag is-dark">Embedded</span>
+        <span class="tag is-dark">C++</span>
+        <span class="tag is-dark">Physics</span>
+      </div>
+    </header>
 
-  <!-- Hero -->
-  <section class="hero">
-  <div class="hero-body" style="justify-content: flex-start; padding-top: 7rem;">
-    <div class="container">
-      <h1 class="title is-2">About Me</h1>
-      <p class="subtitle is-5 mt-2">
-        A collection of my work in embedded systems, hardware–software interfaces, and applied research.
-      </p>
+    <div class="project-grid">
+      <!-- Media -->
+      <!-- <div class="media-box">
+        <img src="/assets/thumbnails/ap-physics-c.png" alt="Project preview" />
+      </div> -->
+      <div>
+      <div class="project-carousel media-box">
+        <div class="carousel-slide"><img src="/assets/backgrounds/background-static-original.png" /></div>
+        <div class="carousel-slide"><video src="/assets/backgrounds/background-video.mp4" controls></video></div>
+        <div class="carousel-slide"><img src="/assets/thumbnails/ap-physics-c.png" /></div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-prev">‹</button>
+        <button class="carousel-next">›</button>
+      </div>
+      </div>
+      <!-- Content -->
+      <div class="project-content">
+        <p>
+          This project documents my work throughout AP Physics C, focusing on
+          computational modeling, experimental design, and applied problem
+          solving in mechanics and electromagnetism.
+        </p>
+
+        <div class="project-links">
+          <a class="button is-link is-light" href="#">GitHub Repo</a>
+        </div>
+
+        <a class="back-link" href="/projects/">← Back to projects</a>
+      </div>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <p>© 2026 Ethan Wen</p>
   </div>
-</section>
+  <script>
+const slides = document.querySelectorAll('.carousel-slide');
+let index = 0;
 
-<!-- Scroll test area (adds extra height so you can verify scrolling) -->
-<section class="scroll-test page-section">
-<div class="container">
-    <h2 class="title is-3">Scroll test</h2>
-    <p>Scroll down to verify the page scrolls correctly.</p>
-    <div style="height:1600px;"></div>
-    <p>End of scroll test area.</p>
-</div>
-</section>
+function showSlide(i) {
+  slides.forEach((s, idx) => s.style.display = idx === i ? 'block' : 'none');
+}
+showSlide(index);
 
-<!-- Footer -->
-<div class="page-footer">
-  <p>© 2026 Ethan Wen</p>
-</div>
+document.querySelector('.carousel-next').onclick = () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+};
+document.querySelector('.carousel-prev').onclick = () => {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+};
+</script>
 </body>
 </html>
