@@ -2,68 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ethan Wen | About Me</title>
+  <title>Ethan Wen | Google Form Autofill</title>
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <!-- Bulma -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Project-specific CSS -->
+  <link rel="stylesheet" href="/assets/css/project-page.css">
 </head>
 
 <body>
   <!-- Background -->
   <img class="bg" src="/assets/backgrounds/background-static.png" />
 
-  <!-- Background overlay -->
-  <div class="bg-overlay"></div>
-
   <!-- Navigation -->
   <nav class="nav-wrapper">
     <a class="nav-item" href="/">Home</a>
-    <a class="nav-item" href="/projects/">Projects</a>
+    <a class="nav-item active" href="/projects/">Projects</a>
     <a class="nav-item" href="/resume/">Resume</a>
-    <a class="nav-item active" href="/about/">About</a>
+    <a class="nav-item" href="/about/">About</a>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-  <div class="hero-body" style="justify-content: flex-start; padding-top: 7rem;">
-    <div class="container">
-      <h1 class="title is-2">About Me</h1>
-      <p class="subtitle is-5 mt-2">
-        A collection of my work in embedded systems, hardware–software interfaces, and applied research.
-      </p>
+  <!-- Project -->
+  <section class="project-shell">
+    <!-- Project Header -->
+    <header class="project-header">
+      <h1 class="title is-3" style="margin-bottom: 1rem;">Google Form Autofill</h1>
+      <div class="project-tags">
+        <span class="tag is-dark">Google Workspace</span>
+        <span class="tag is-dark">JavaScript</span>
+        <span class="tag is-dark">Google Apps Script</span>
+        <span class="tag is-dark">Automation</span>
+      </div>
+    </header>
+
+    <!-- Project Grid -->
+    <div class="project-grid">
+      <!-- Media -->
+      <div class="project-carousel media-box">
+        <div class="carousel-slide"><img src="/assets/projects/google-form-autofill/main-code.png" /></div>
+        <div class="carousel-slide"><img src="/assets/projects/google-form-autofill/autofilled-doc.png" /></div>
+        <div class="carousel-slide"><img src="/assets/projects/google-form-autofill/successful-email.png" /></div>
+        <!-- <div class="carousel-slide"><video src="" controls playsinline loop poster=""></video></div> -->
+
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
+
+        <!-- Carousel controls -->
+        <button class="carousel-prev">←</button>
+        <button class="carousel-next">→</button>
+      </div>
+
+      <!-- Content -->
+      <div class="project-content">
+        <p>
+          This project uses Google Apps Script to automate the National Chinese Honor Society’s member application process by collecting responses from a Google Form, populating an official application PDF, and emailing the completed document to the applicant. What began as a small Apps Script experiment evolved into a full automation workflow, emphasizing scripting logic, document generation, and integration across Google Workspace tools. While originally built for my school's chapter of NCHS, the project’s focus is on scalable automation rather than manual administrative work.
+        </p>
+
+        <div class="project-links">
+          <a class="button is-link is-light" href="https://github.com/wen-ethan/nchs-memberapp" target="_blank">GitHub Repo</a>
+        </div>
+
+        <a class="back-link" href="/projects/">← Back to projects</a>
+      </div>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <p>© 2026 Ethan Wen</p>
   </div>
-</section>
-
-<!-- Scroll test area (adds extra height so you can verify scrolling) -->
-<section class="scroll-test page-section">
-<div class="container">
-    <h2 class="title is-3">Scroll test</h2>
-    <p>Scroll down to verify the page scrolls correctly.</p>
-    <div style="height:1600px;"></div>
-    <p>End of scroll test area.</p>
-</div>
-</section>
-
-<!-- Footer -->
-<div class="page-footer">
-  <p>© 2026 Ethan Wen</p>
-</div>
+  <script src="/assets/js/project-carousel.js"></script>
 </body>
 </html>

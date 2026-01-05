@@ -18,7 +18,6 @@ html, body {
     object-fit: cover;
     z-index: 0;
     pointer-events: none;
-    /* filter: brightness(0.45) saturate(0.95); */ /* try to add this as a actual filter on the images, rather than html filter */
 }
 
 .bg-video {
@@ -41,12 +40,12 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px); /* Reduced blur */
+    backdrop-filter: blur(8px);
     border-radius: 999px;
     padding: 0.4rem;
     display: flex;
     gap: 0.25rem;
-    will-change: transform; /* Hint for smoother animations */
+    will-change: transform;
 }
 
 /* ---------- Navigation ---------- */

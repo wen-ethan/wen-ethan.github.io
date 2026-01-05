@@ -1,7 +1,7 @@
 /* ---------- Project Page Styles ---------- */
 .project-shell {
     max-width: 1100px;
-    margin: 7rem auto 0; /* combined top and bottom margins */
+    margin: 7rem auto 0;
     padding: 2rem;
     border-radius: 40px;
     background: rgba(255, 255, 255, 0.08);
@@ -65,7 +65,7 @@
     border-radius: 999px;
     font-weight: 500;
     margin-right: 0.6rem;
-    margin-top: 0.75rem;
+    margin-top: 1.5rem;
     transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
@@ -112,6 +112,7 @@
     display: block;
     aspect-ratio: 4/3;
     border-radius: 24px;
+    object-fit: contain
 }
 
 .carousel-prev,
