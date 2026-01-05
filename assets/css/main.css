@@ -111,7 +111,6 @@ html, body {
 .projects-section {
     position: relative;
     z-index: 2;
-    margin-top: 2rem;
 }
 
 .projects-grid {

@@ -1,0 +1,75 @@
+/* Disable project-card interaction on resume */
+.resume-page .project-card {
+  cursor: default;
+  transform: none;
+}
+
+.resume-page .project-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: none;
+}
+
+/* Tighten resume card spacing */
+.resume-page .project-card {
+  padding: 1rem;
+}
+
+.resume-page .project-content {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* PDF download button */
+.resume-download {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.resume-download:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* Resume content */
+.resume-entry {
+  margin-top: 0.75rem;
+}
+
+.resume-meta {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.resume-entry ul {
+  margin: 0.25rem 0 0 1.1rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Skill pills */
+.resume-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.resume-skills span {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Make strong text readable on resume */
+.resume-page strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+}

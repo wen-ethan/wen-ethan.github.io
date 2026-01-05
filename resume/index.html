@@ -22,11 +22,14 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Resume CSS -->
+  <link rel="stylesheet" href="/assets/css/resume.css">
 </head>
 
-<body>
+<body class="resume-page">
   <!-- Background -->
-  <img class="bg" src="/assets/backgrounds/background-static.png" />
+  <img class="bg" src="/assets/backgrounds/background-static.png" loading="lazy"/>
 
   <!-- Navigation -->
   <nav class="nav-wrapper">
@@ -38,29 +41,88 @@
 
   <!-- Hero -->
   <section class="hero">
-  <div class="hero-body" style="justify-content: flex-start; padding-top: 7rem;">
-    <div class="container">
-      <h1 class="title is-2">Resume</h1>
-      <p class="subtitle is-5 mt-2">
-        A collection of my work in embedded systems, hardware–software interfaces, and applied research.
-      </p>
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-2">Resume</h1>
+        <p class="subtitle is-5 mt-2">
+          Education, experience, and skills.
+        </p>
+
+        <!-- Download PDF (same conceptual role as back-link) -->
+        <div class="resume-actions mt-4">
+          <a href="/assets/Ethan_Wen_Resume.pdf" class="resume-download" download>↓ Download PDF</a>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section class="projects-section page-section">
+    <div class="container">
+      <div class="projects-grid">
+
+        <!-- Education -->
+        <div class="project-card resume-card">
+          <div class="project-content">
+            <h3 class="project-title">Education</h3>
+
+            <div class="resume-entry">
+              <strong>Princeton University</strong><br>
+              <span class="resume-meta">B.S.E. Electrical & Computer Engineering · 2024–2028</span>
+              <ul>
+                <li>Relevant coursework: Circuits, Digital Systems, Computer Architecture</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="project-card resume-card">
+          <div class="project-content">
+            <h3 class="project-title">Experience</h3>
+
+            <div class="resume-entry">
+              <strong>Teen Coalition for Chinatown</strong><br>
+              <span class="resume-meta">Research & Advocacy</span>
+              <ul>
+                <li>Researched development impacts in Chicago’s Chinatown</li>
+                <li>Supported community-led advocacy through policy analysis</li>
+              </ul>
+            </div>
+
+            <div class="resume-entry">
+              <strong>Independent Research</strong><br>
+              <span class="resume-meta">AI Content Detection</span>
+              <ul>
+                <li>Designed experiments comparing AI detectors on human vs AI writing</li>
+                <li>Presented findings at formal research showcases</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="project-card resume-card">
+          <div class="project-content">
+            <h3 class="project-title">Skills</h3>
+            <div class="resume-skills">
+              <span>Python</span>
+              <span>C/C++</span>
+              <span>HTML / CSS / JS</span>
+              <span>Embedded Systems</span>
+              <span>ESP32</span>
+              <span>Linux</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <p>© 2026 Ethan Wen</p>
   </div>
-</section>
-
-<!-- Scroll test area (adds extra height so you can verify scrolling) -->
-<section class="scroll-test page-section">
-<div class="container">
-    <h2 class="title is-3">Scroll test</h2>
-    <p>Scroll down to verify the page scrolls correctly.</p>
-    <div style="height:1600px;"></div>
-    <p>End of scroll test area.</p>
-</div>
-</section>
-
-<!-- Footer -->
-<div class="page-footer">
-  <p>© 2026 Ethan Wen</p>
-</div>
 </body>
 </html>
