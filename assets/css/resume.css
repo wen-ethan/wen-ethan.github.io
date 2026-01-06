@@ -1,3 +1,4 @@
+/*----------- Resume Page Styles ----------*/
 /* Disable project-card interaction on resume */
 .resume-page .project-card {
   cursor: default;
@@ -47,7 +48,7 @@
 }
 
 .resume-entry ul {
-  margin: 0.25rem 0 0 1.1rem;
+  margin: 0.25rem 25rem 0 1.1rem;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.75);
 }
@@ -72,4 +73,11 @@
 .resume-page strong {
   color: rgba(255, 255, 255, 0.95);
   font-weight: 600;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .resume-entry ul {
+    margin: 0.25rem 0 0 1.1rem;
+  }
 }
