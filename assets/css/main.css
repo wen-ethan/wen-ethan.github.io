@@ -1,0 +1,221 @@
+/* ---------- Base ---------- */
+html, body {
+    height: 100%;
+    font-family: "Inter", system-ui, sans-serif;
+    background: #42253f;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* ---------- Background ---------- */
+.bg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-video {
+    filter: brightness(0.45) saturate(0.95);
+}
+
+.bg-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 18, 32, 0.35);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ---------- Layering ---------- */
+.nav-wrapper {
+    position: fixed;
+    z-index: 3;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+    padding: 0.4rem;
+    display: flex;
+    gap: 0.25rem;
+    will-change: transform;
+}
+
+/* ---------- Navigation ---------- */
+.nav-item {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.174);
+    color: white;
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+.hero-body {
+    justify-content: center;
+    text-align: center;
+    padding-top: 7rem;
+}
+
+.title {
+    color: rgba(255, 255, 255, 0.726);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.726);
+    max-width: 36rem;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+/* ---------- Page spacing system ---------- */
+.page-section {
+    padding-left: calc(1.25rem + env(safe-area-inset-left));
+    padding-right: calc(1.25rem + env(safe-area-inset-right));
+}
+
+@media (min-width: 768px) {
+    .page-section {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* ---------- Projects grid ---------- */
+.projects-section {
+    position: relative;
+    z-index: 2;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+/* ---------- Project card ---------- */
+.project-card {
+    display: flex;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 40px;
+    width: 100%;
+    max-width: 1200px;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, background 0.2s ease;
+    will-change: transform;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+.project-card.image-right .project-image {
+    margin-left: auto;
+}
+
+/* ---------- Image ---------- */
+.project-image {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 540px;
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- Text ---------- */
+.project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.25rem 1rem 0 4rem;
+}
+
+.project-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.project-description {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 38ch;
+}
+
+/* ---------- Mobile layout ---------- */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-image {
+        order: -1;
+        width: 100%;
+    }
+
+    .project-title {
+        font-size: 1.75rem;
+    }
+
+    .project-description {
+        max-width: none;
+    }
+
+    .project-content {
+        padding: 0.25rem;
+    }
+}
+
+/* ---------- Footer ---------- */
+.page-footer {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem calc(1.25rem + env(safe-area-inset-left)) 2.5rem calc(1.25rem + env(safe-area-inset-right));
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
