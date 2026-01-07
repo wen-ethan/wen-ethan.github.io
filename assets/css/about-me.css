@@ -1,0 +1,101 @@
+/* ---------- About Page Styles ---------- */
+
+.about-shell {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    position: relative;
+    z-index: 2;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ---------- Headshot ---------- */
+
+.about-media {
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.about-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+/* ---------- Text ---------- */
+
+.about-content {
+    padding: 0.5rem 0.5rem;
+}
+
+.about-content p {
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Social Links ---------- */
+
+.about-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.about-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.about-links a:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.about-links img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+}
+
+.icon {
+  fill: white;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+    .about-shell {
+        margin: 1.5rem 1rem 0;
+        padding: 1.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-media {
+        order: -1;
+    }
+}
