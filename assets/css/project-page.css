@@ -79,7 +79,7 @@
     background: rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
     opacity: 0.9;
     transition: opacity 0.15s ease, transform 0.15s ease;
 }
@@ -87,6 +87,7 @@
 .back-link:hover,
 .project-links a:hover {
     opacity: 1;
+    color: #fff;
     transform: translateY(-1px);
 }
 
