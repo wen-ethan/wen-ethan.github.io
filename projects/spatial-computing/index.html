@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ethan Wen | Spatial Computing Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Project-specific CSS -->
+  <link rel="stylesheet" href="/assets/css/project-page.css">
+</head>
+
+<body>
+  <!-- Background -->
+  <img class="bg" src="/assets/backgrounds/background-static.png" />
+
+  <!-- Navigation -->
+  <nav class="nav-wrapper">
+    <a class="nav-item" href="/">Home</a>
+    <a class="nav-item active" href="/projects/">Projects</a>
+    <a class="nav-item" href="/resume/">Resume</a>
+    <a class="nav-item" href="/about/">About</a>
+  </nav>
+
+  <!-- Project -->
+  <section class="project-shell">
+    <!-- Project Header -->
+    <header class="project-header">
+      <h1 class="title is-3" style="margin-bottom: 1rem;">Spatial Computing Portfolio</h1>
+      <div class="project-tags">
+        <span class="tag is-dark">Spatial Computing</span>
+        <span class="tag is-dark">Augmented Reality</span>
+        <span class="tag is-dark">3D Design</span>
+        <span class="tag is-dark">Spline</span>
+        <span class="tag is-dark">Reality Composer</span>
+      </div>
+    </header>
+
+    <!-- Project Grid -->
+    <div class="project-grid">
+      <!-- Media -->
+      <!-- https://imagy.app/image-aspect-ratio-changer/ make sure its 4/3 -->
+      <div class="project-carousel media-box">
+        <div class="carousel-slide"><img src="/assets/projects/spatial-computing/tiger_firefighter.png" /></div>
+        <div class="carousel-slide"><img src="/assets/projects/spatial-computing/potted_plant.png" /></div>
+        <div class="carousel-slide"><img src="/assets/projects/spatial-computing/spline_vespa.png" /></div>
+        <div class="carousel-slide"><video src="/assets/projects/spatial-computing/spline_animation.mov" controls playsinline loop poster="/assets/projects/spatial-computing/spline_animation_thumbnail.png"></video></div>
+        <div class="carousel-slide"><video src="/assets/projects/spatial-computing/in-progress_screen_recording.mp4" controls playsinline loop poster="/assets/projects/spatial-computing/in-progress_screen_recording_thumbnail.png"></video></div>
+        <div class="carousel-slide"><video src="/assets/projects/spatial-computing/final_project_video.mp4" controls playsinline loop poster="/assets/projects/spatial-computing/final_project_video_thumbnail.jpg"></video></div>
+
+        <!-- Carousel indicators -->
+        <!-- KEEP AS SAME NUMBER AS IN CAROUSEL -->
+        <div class="carousel-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
+
+        <!-- Carousel controls -->
+        <button class="carousel-prev">←</button>
+        <button class="carousel-next">→</button>
+      </div>
+
+      <!-- Content -->
+      <div class="project-content">
+        <p>
+          This project is a collection of spatial computing work I created while exploring how interaction, scale, and motion can be used to communicate ideas in 3D space. Built during my Digital Creators Internship, these projects range from polished AR experiences to smaller experiments focused on animation, modeling, and user interaction. One of the projects in this portfolio was selected to be showcased at Apple’s Everyone Can Code Showcase.
+        </p>
+
+        <div class="project-links">
+          <a class="button is-link is-light" href="https://github.com/wen-ethan/spatial-computing" target="_blank">GitHub Repo</a>
+          <a class="button is-link is-light" href="https://www.eccchicago.org/2025-showcase.html" target="_blank">Apple EOC Showcase 2025</a>
+        </div>
+
+        <a class="back-link" href="/projects/">← Back to projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <p>© 2026 Ethan Wen</p>
+  </div>
+  <script src="/assets/js/project-carousel.js"></script>
+</body>
+</html>
