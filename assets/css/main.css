@@ -20,14 +20,10 @@ html, body {
     pointer-events: none;
 }
 
-.bg-video {
-    filter: brightness(0.45) saturate(0.95);
-}
-
 .bg-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(15, 18, 32, 0.35);
+    background: rgba(15, 18, 32, 0.55);
     z-index: 1;
     pointer-events: none;
 }
