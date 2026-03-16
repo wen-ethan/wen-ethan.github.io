@@ -72,7 +72,6 @@
 }
 
 .back-link {
-    margin-top: 2rem;
     display: inline-flex;
     align-items: center;
     width: fit-content;
@@ -86,7 +85,31 @@
     transition: filter 0.15s ease, transform 0.15s ease;
 }
 
+.blog-link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.55rem 1.05rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0.9;
+    text-decoration: none;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.project-footer {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+}
+
 .back-link:hover,
+.blog-link:hover,
 .project-links a:hover {
     transform: translateY(-1px);
 }

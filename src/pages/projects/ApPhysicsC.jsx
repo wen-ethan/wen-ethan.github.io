@@ -44,7 +44,9 @@ export default function ApPhysicsC() {
               <a className="button is-link is-light" href="https://github.com/wen-ethan/ap-physics-notes" target="_blank" rel="noreferrer">GitHub Repo</a>
             </div>
 
-            <a className="back-link" href="/projects">← Back to projects</a>
+            <div className="project-footer">
+              <a className="back-link" href="/projects">← Back to projects</a>
+            </div>
           </div>
         </div>
       </section>

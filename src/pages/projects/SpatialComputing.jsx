@@ -41,7 +41,10 @@ export default function SpatialComputing() {
               <a className="button is-link is-light" href="https://www.eccchicago.org/2025-showcase.html" target="_blank" rel="noreferrer">Apple EOC Showcase 2025</a>
             </div>
 
-            <a className="back-link" href="/projects">← Back to projects</a>
+            <div className="project-footer">
+              <a className="back-link" href="/projects">← Back to projects</a>
+              {/* <a className="blog-link" href="/projects/blog-template">Read Documentation →</a> */}
+            </div>
           </div>
         </div>
       </section>

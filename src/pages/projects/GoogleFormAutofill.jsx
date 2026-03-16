@@ -43,7 +43,9 @@ export default function GoogleFormAutofill() {
               <a className="button is-link is-light" href="https://github.com/wen-ethan/apps-script-application-automation" target="_blank" rel="noreferrer">GitHub Repo</a>
             </div>
 
-            <a className="back-link" href="/projects">← Back to projects</a>
+            <div className="project-footer">
+              <a className="back-link" href="/projects">← Back to projects</a>
+            </div>
           </div>
         </div>
       </section>
