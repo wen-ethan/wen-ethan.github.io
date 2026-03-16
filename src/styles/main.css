@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 /* ---------- Base ---------- */
 html, body {
     height: 100%;
@@ -6,7 +8,10 @@ html, body {
     color: white;
     overflow-x: hidden;
     overflow-y: auto;
-    scroll-behavior: smooth;
+}
+
+#root {
+    height: 100%;
 }
 
 /* ---------- Background ---------- */
@@ -28,7 +33,7 @@ html, body {
     pointer-events: none;
 }
 
-/* ---------- Layering ---------- */
+/* ---------- Navigation ---------- */
 .nav-wrapper {
     position: fixed;
     z-index: 3;
@@ -44,7 +49,6 @@ html, body {
     will-change: transform;
 }
 
-/* ---------- Navigation ---------- */
 .nav-item {
     padding: 0.45rem 0.9rem;
     border-radius: 999px;
