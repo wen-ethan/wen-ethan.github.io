@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Background from '../../components/Background'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
@@ -44,7 +45,7 @@ export default function GoogleFormAutofill() {
             </div>
 
             <div className="project-footer">
-              <a className="back-link" href="/projects">← Back to projects</a>
+              <Link className="back-link" to="/projects">← Back to projects</Link>
             </div>
           </div>
         </div>
