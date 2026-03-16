@@ -1,99 +1,87 @@
-.resume-shell {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem 4rem;
+/*----------- Resume Page Styles ----------*/
+/* Disable project-card interaction on resume */
+.resume-page .project-card {
+  cursor: default;
+  transform: none;
 }
 
+.resume-page .project-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: none;
+}
+
+/* Tighten resume card spacing */
+.resume-page .project-card {
+  padding: 1rem;
+}
+
+.resume-page .project-content {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* PDF download button */
 .resume-download {
-  display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.5rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.55rem 1.05rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background 0.2s, transform 0.2s;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .resume-download:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
+    opacity: 1;
+    color: white;
+    transform: translateY(-1px);
 }
 
-.resume-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.resume-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 40px;
-  padding: 2rem 2.5rem;
-}
-
-.resume-card h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0 0 1.25rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
+/* Resume content */
 .resume-entry {
   margin-top: 0.75rem;
 }
 
-.resume-entry strong {
+.resume-meta {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.resume-entry ul {
+  margin: 0.25rem 25rem 0 1.1rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Skill pills */
+.resume-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.resume-skills span {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Make strong text readable on resume */
+.resume-page strong {
   color: rgba(255, 255, 255, 0.95);
   font-weight: 600;
 }
 
-.resume-meta {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
-  margin: 0.1rem 0 0.3rem;
-}
-
-.resume-entry ul {
-  margin: 0.25rem 0 0 1.1rem;
-  padding: 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-}
-
-.resume-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-
-.resume-tag {
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-  .resume-card {
-    padding: 1.5rem;
-  }
-
   .resume-entry ul {
-    margin-right: 0;
+    margin: 0.25rem 0 0 1.1rem;
   }
 }

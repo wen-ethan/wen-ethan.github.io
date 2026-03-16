@@ -5,131 +5,138 @@ import '../styles/resume.css'
 
 export default function Resume() {
   return (
-    <>
+    <div className="resume-page">
       <Background />
       <Nav />
-      <section className="hero" style={{ minHeight: 'auto' }}>
-        <div className="hero-body" style={{ paddingBottom: '2rem' }}>
-          <h1 className="hero-title">Resume</h1>
-          <p className="hero-subtitle">Education, experience, and skills.</p>
-          <a href="/Ethan_Wen_Resume.pdf" className="resume-download" target="_blank" rel="noreferrer">
-            ↓ Download PDF
-          </a>
+      <section className="hero">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title is-2">Resume</h1>
+            <p className="subtitle is-5 mt-2">
+              Education, experience, and skills.
+            </p>
+            <div className="resume-actions mt-4">
+              <a href="/Ethan_Wen_Resume.pdf" className="resume-download" download>↓ Download PDF</a>
+            </div>
+          </div>
         </div>
       </section>
-      <div className="resume-shell">
-        <div className="resume-grid">
 
-          {/* Education */}
-          <div className="resume-card">
-            <h2>Education</h2>
+      <section className="projects-section page-section">
+        <div className="container">
+          <div className="projects-grid">
 
-            <div className="resume-entry">
-              <strong>Princeton University</strong>
-              <p className="resume-meta">B.S.E. Electrical & Computer Engineering · Expected May 2029 · GPA 3.82</p>
-            </div>
+            {/* Education */}
+            <div className="project-card resume-card">
+              <div className="project-content">
+                <h3 className="project-title">Education</h3>
 
-            <div className="resume-entry">
-              <strong>City Colleges of Chicago</strong>
-              <p className="resume-meta">Associate's Degree, Early College Program · Jun 2024–Jul 2025</p>
-              <ul><li>Calculus III, Linear Algebra</li></ul>
-            </div>
-
-            <div className="resume-entry">
-              <strong>University of Chicago — Summer Bridge</strong>
-              <p className="resume-meta">Jun 2023–Mar 2025</p>
-              <ul><li>World Literature I & II; Physics of Stars</li></ul>
-            </div>
-
-            <div className="resume-entry">
-              <strong>Walter Payton College Prep</strong>
-              <p className="resume-meta">High School Diploma · Jun 2025</p>
-              <ul>
-                <li>1st in State CyberPatriots XVI</li>
-                <li>2nd IEEE SSCS Arduino Contest 2024</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Experience */}
-          <div className="resume-card">
-            <h2>Experience</h2>
-
-            <div className="resume-entry">
-              <strong>Project:VISION, Inc. — Digital Creators Intern (Spatial Computing)</strong>
-              <p className="resume-meta">Chicago, IL · Jun–Jul 2025</p>
-              <ul>
-                <li>Developed spatial computing and AR portfolio pieces selected for Apple Everyone Can Code Showcase</li>
-                <li>Used Spline and Reality Composer Pro to build immersive 3D experiences</li>
-              </ul>
-            </div>
-
-            <div className="resume-entry">
-              <strong>Hoagie Club — HoagieHelp Developer</strong>
-              <p className="resume-meta">Princeton, NJ · Feb 2026–Present</p>
-              <ul>
-                <li>Building student resource platform with Next.js, React, TypeScript, Tailwind, and Python backend</li>
-              </ul>
-            </div>
-
-            <div className="resume-entry">
-              <strong>MIT Beaver Works Summer Institute — Microelectronics Program</strong>
-              <p className="resume-meta">Jul–Aug 2024</p>
-              <ul>
-                <li>Completed 100-hour intensive embedded systems program</li>
-                <li>Built capstone hardware prototype</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Activities */}
-          <div className="resume-card">
-            <h2>Activities</h2>
-
-            <div className="resume-entry">
-              <strong>Princeton University Robotics Club</strong>
-              <p className="resume-meta">Princeton, NJ · Sept 2025–Present</p>
-            </div>
-
-            <div className="resume-entry">
-              <strong>Cantonese Language and Culture Club — Cofounder</strong>
-              <p className="resume-meta">Chicago, IL · Jul–Aug 2024</p>
-            </div>
-          </div>
-
-          {/* Skills */}
-          <div className="resume-card">
-            <h2>Skills & Interests</h2>
-
-            <div className="resume-entry">
-              <strong>Languages</strong>
-              <p className="resume-meta">English (native) · Cantonese (native) · Mandarin (professional)</p>
-            </div>
-
-            <div className="resume-entry">
-              <strong>Technical</strong>
-              <div className="resume-tags">
-                {['Python', 'C/C++', 'Arduino/ESP32', 'HTML/CSS/JS', 'LaTeX', 'Git',
-                  'Circuit Fundamentals', 'PCB Design Basics', 'Spline', 'Reality Composer'].map(s => (
-                  <span key={s} className="resume-tag">{s}</span>
-                ))}
+                <div className="resume-entry">
+                  <strong>Princeton University</strong> <span className="resume-meta">Princeton, NJ</span><br />
+                  <span className="resume-meta">B.S.E. Electrical & Computer Engineering · Expected May 2029</span>
+                  <ul><li>Cumulative GPA: 3.82</li></ul>
+                </div>
+                <div className="resume-entry">
+                  <strong>City Colleges of Chicago</strong> <span className="resume-meta">Chicago, IL</span><br />
+                  <span className="resume-meta">Associate's Degree in General Studies, Early College Program · Jun 2024 – Jul 2025</span>
+                  <ul><li>Relevant Coursework: Calculus & Analytic Geometry III; Linear Algebra</li></ul>
+                </div>
+                <div className="resume-entry">
+                  <strong>University of Chicago</strong> <span className="resume-meta">Chicago, IL</span><br />
+                  <span className="resume-meta">Summer Bridge, College Academic Bridge · Jun 2023 – Mar 2025</span>
+                  <ul><li>Relevant Coursework: Readings in World Literature I & II; Physics of Stars: An Introduction</li></ul>
+                </div>
+                <div className="resume-entry">
+                  <strong>Walter Payton College Preparatory High School</strong> <span className="resume-meta">Chicago, IL</span><br />
+                  <span className="resume-meta">High School Diploma · Jun 2025</span>
+                  <ul><li>Awards: 1st in State in CyberPatriots XVI Semifinal Round; 2nd in IEEE SSCS Arduino Contest 2024</li></ul>
+                </div>
               </div>
             </div>
 
-            <div className="resume-entry">
-              <strong>Interests</strong>
-              <div className="resume-tags">
-                {['Spatial Computing', 'Microelectronics', 'Robotics', 'East Asian Culture',
-                  'Modern Chinese History', '3D Modeling & Design', 'Astrophysics'].map(s => (
-                  <span key={s} className="resume-tag">{s}</span>
-                ))}
+            {/* Experience */}
+            <div className="project-card resume-card">
+              <div className="project-content">
+                <h3 className="project-title">Experience</h3>
+
+                <div className="resume-entry">
+                  <strong>Project:VISION, Inc.</strong> <span className="resume-meta">Digital Creators Intern (Spatial Computing) · Chicago, IL</span><br />
+                  <span className="resume-meta">Jun 2025 - Jul 2025</span>
+                  <ul>
+                    <li>Designed interactive spatial computing experiences using Spline and Reality Composer, creating AR-ready 3D environments and prototypes for deployment on platforms including the Apple Vision Pro.</li>
+                    <li>Selected to showcase project work at Apple's Everyone Can Code Showcase, demonstrating creativity, technical execution, and user-centered design.</li>
+                  </ul>
+                </div>
+
+                <div className="resume-entry">
+                  <strong>Hoagie Club</strong> <span className="resume-meta">HoagieHelp Developer · Princeton, NJ</span><br />
+                  <span className="resume-meta">Feb 2026 - Present</span>
+                  <ul>
+                    <li>Contribute to development of HoagieHelp, an academic support platform featuring Q&A forums and study group coordination.</li>
+                    <li>Develop frontend components using Next.js, React, TypeScript, and Tailwind, integrating with Python-based backend services.</li>
+                  </ul>
+                </div>
+
+                <div className="resume-entry">
+                  <strong>MIT Beaver Works Summer Institute</strong> <span className="resume-meta">Microelectronics Program Participant</span><br />
+                  <span className="resume-meta">Jul 2024 - Aug 2024</span>
+                  <ul>
+                    <li>Completed 100-hour microelectronics program covering embedded systems and circuit behavior, involving lectures, labs, and technical assignments.</li>
+                    <li>Designed and presented a functional capstone prototype in a 50-student national cohort.</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
 
+            {/* Activities */}
+            <div className="project-card resume-card">
+              <div className="project-content">
+                <h3 className="project-title">Activities</h3>
+
+                <div className="resume-entry">
+                  <strong>Princeton University Robotics Club</strong> <span className="resume-meta">Member · Princeton, NJ</span><br />
+                  <span className="resume-meta">Sept 2025 - Present</span>
+                  <ul><li>Participating in hands-on robotics and computing projects, including PC hardware configuration, firmware workflows, and system-level troubleshooting.</li></ul>
+                </div>
+
+                <div className="resume-entry">
+                  <strong>Cantonese Language and Culture Club</strong> <span className="resume-meta">Cofounder · Chicago, IL</span><br />
+                  <span className="resume-meta">Jul 2024 - Aug 2024</span>
+                  <ul><li>Organized weekly meetings and cultural events to promote Cantonese language learning and community building.</li></ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Skills & Interests */}
+            <div className="project-card resume-card">
+              <div className="project-content">
+                <h3 className="project-title">Skills & Interests</h3>
+                <strong>Language Skills</strong>
+                <div className="resume-skills mb-3">
+                  {['English (native)', 'Cantonese (native)', 'Mandarin (professional proficiency)'].map(s => (
+                    <span key={s}>{s}</span>
+                  ))}
+                </div>
+                <strong>Technical Skills</strong>
+                <div className="resume-skills mb-3">
+                  {['Python', 'C/C++', 'Arduino / ESP32', 'HTML / CSS / JS', 'LaTeX', 'Git', 'Circuit Fundamentals', 'PCB Design Basics', 'Spline', 'Reality Composer'].map(s => (
+                    <span key={s}>{s}</span>
+                  ))}
+                </div>
+                <strong>Interests</strong>
+                <div className="resume-skills">
+                  {['Spatial Computing', 'Microelectronics', 'Robotics', 'East Asian Culture', 'Modern Chinese History', '3D Modeling & Design', 'Astrophysics'].map(s => (
+                    <span key={s}>{s}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
+      </section>
+
       <Footer />
-    </>
+    </div>
   )
 }

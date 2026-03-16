@@ -1,210 +1,222 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
+/* ---------- Base ---------- */
 html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  font-family: 'Inter', sans-serif;
-  color: white;
-  background: #42253f;
+    height: 100%;
+    font-family: "Inter", system-ui, sans-serif;
+    background: #42253f;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 #root {
-  min-height: 100vh;
+    height: 100%;
 }
 
-/* Background */
+/* ---------- Background ---------- */
 .bg {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .bg-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 18, 32, 0.55);
-  z-index: 1;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 18, 32, 0.55);
+    z-index: 1;
+    pointer-events: none;
 }
 
-/* Navigation */
+/* ---------- Navigation ---------- */
 .nav-wrapper {
-  position: fixed;
-  top: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: flex;
-  gap: 0.25rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 0.4rem 0.5rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  white-space: nowrap;
+    position: fixed;
+    z-index: 3;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+    padding: 0.4rem;
+    display: flex;
+    gap: 0.25rem;
+    will-change: transform;
 }
 
 .nav-item {
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background 0.2s, color 0.2s;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
+    background: rgba(255, 255, 255, 0.174);
+    color: white;
 }
 
 .nav-item.active {
-  background: rgba(255, 255, 255, 0.25);
-  color: white;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
 }
 
-/* Hero */
+/* ---------- Hero ---------- */
 .hero {
-  position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    z-index: 2;
+    background: transparent;
 }
 
 .hero-body {
-  padding-top: 5rem;
-  text-align: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 7rem;
 }
 
-.hero-title {
-  font-size: 3rem;
-  font-weight: 600;
-  margin: 0 0 0.75rem;
+.title {
+    color: rgba(255, 255, 255, 0.726);
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
-.hero-subtitle {
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 42ch;
-  margin: 0 auto;
-  line-height: 1.6;
+.subtitle {
+    color: rgba(255, 255, 255, 0.726);
+    max-width: 36rem;
+    margin: 0 auto;
+    opacity: 0.85;
 }
 
-/* Projects grid */
+/* ---------- Page spacing system ---------- */
+.page-section {
+    padding-left: calc(1.25rem + env(safe-area-inset-left));
+    padding-right: calc(1.25rem + env(safe-area-inset-right));
+}
+
+@media (min-width: 768px) {
+    .page-section {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* ---------- Projects grid ---------- */
+.projects-section {
+    position: relative;
+    z-index: 2;
+}
+
 .projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: center;
-  justify-items: center;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem 4rem;
-  position: relative;
-  z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
 }
 
-/* Project card */
+/* ---------- Project card ---------- */
 .project-card {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 40px;
-  padding: 2rem;
-  max-width: 1200px;
-  width: 100%;
-  text-decoration: none;
-  color: white;
-  transition: transform 0.2s, background 0.2s;
+    display: flex;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 40px;
+    width: 100%;
+    max-width: 1200px;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, background 0.2s ease;
+    will-change: transform;
 }
 
 .project-card:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
 }
 
-.project-card.image-right {
-  flex-direction: row-reverse;
+.project-card.image-right .project-image {
+    margin-left: auto;
 }
 
-.project-card.image-right .project-content {
-  padding: 0.25rem 4rem 0 1rem;
-}
-
+/* ---------- Image ---------- */
 .project-image {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 540px;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  border-radius: 24px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 540px;
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    overflow: hidden;
 }
 
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- Text ---------- */
 .project-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0.25rem 1rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.25rem 1rem 0 4rem;
 }
 
 .project-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .project-description {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.65);
-  max-width: 38ch;
-  line-height: 1.6;
-  margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 38ch;
 }
 
-/* Footer */
-.page-footer {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
-}
-
+/* ---------- Mobile layout ---------- */
 @media (max-width: 768px) {
-  .project-card,
-  .project-card.image-right {
-    flex-direction: column;
-    padding: 1.5rem;
-  }
+    .project-card {
+        flex-direction: column;
+    }
 
-  .project-content,
-  .project-card.image-right .project-content {
-    padding: 0;
-  }
+    .project-image {
+        order: -1;
+        width: 100%;
+    }
 
-  .project-image {
-    max-width: 100%;
-  }
+    .project-title {
+        font-size: 1.75rem;
+    }
 
-  .hero-title {
-    font-size: 2rem;
-  }
+    .project-description {
+        max-width: none;
+    }
+
+    .project-content {
+        padding: 0.25rem;
+    }
+}
+
+/* ---------- Footer ---------- */
+.page-footer {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem calc(1.25rem + env(safe-area-inset-left)) 2.5rem calc(1.25rem + env(safe-area-inset-right));
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
 }

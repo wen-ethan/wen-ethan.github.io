@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Background from '../../components/Background'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
@@ -14,45 +13,39 @@ const slides = [
   { type: 'video', src: '/projects/spatial-computing/final_project_video.mp4', poster: '/projects/spatial-computing/final_project_video_thumbnail.jpg' },
 ]
 
-const tags = ['Spatial Computing', 'Augmented Reality', '3D Design', 'Spline', 'Reality Composer']
-
 export default function SpatialComputing() {
   return (
     <>
       <Background />
       <Nav />
-      <div className="project-shell">
-        <Link to="/projects" className="back-link">← Back to Projects</Link>
-        <div className="project-header">
-          <h1>Spatial Computing Portfolio</h1>
+      <section className="project-shell">
+        <header className="project-header">
+          <h1 className="title is-3" style={{ marginBottom: '1rem' }}>Spatial Computing Portfolio</h1>
           <div className="project-tags">
-            {tags.map(t => <span key={t} className="project-tag">{t}</span>)}
+            {['Spatial Computing', 'Augmented Reality', '3D Design', 'Spline', 'Reality Composer'].map(t => (
+              <span key={t} className="tag is-dark">{t}</span>
+            ))}
           </div>
-        </div>
-        <div className="project-body-card">
-          <div className="project-grid">
-            <Carousel slides={slides} />
-            <div className="project-content-side">
-              <p>
-                A collection of spatial computing work created during my Digital Creators Internship at Project:VISION, Inc.
-                The portfolio spans augmented reality scenes, 3D-modeled objects, and interactive spatial experiences.
-              </p>
-              <p>
-                Built using Spline for 3D design and animation, and Apple's Reality Composer Pro for AR deployment on-device.
-                One project was selected for the Apple Everyone Can Code Showcase 2025.
-              </p>
-              <div className="project-links">
-                <a href="https://github.com/wen-ethan/spatial-computing" className="project-link-btn" target="_blank" rel="noreferrer">
-                  GitHub Repo
-                </a>
-                <a href="https://www.apple.com/education/everyone-can-code/" className="project-link-btn" target="_blank" rel="noreferrer">
-                  Apple EOC Showcase 2025
-                </a>
-              </div>
+        </header>
+
+        <div className="project-grid">
+          <Carousel slides={slides} />
+
+          <div className="project-content">
+            <p>
+              This project is a collection of spatial computing work I created while exploring how interaction, scale, and motion can be used to communicate ideas in 3D space. Built during my Digital Creators Internship, these projects range from polished AR experiences to smaller experiments focused on animation, modeling, and user interaction. One of the projects in this portfolio was selected to be showcased at Apple's Everyone Can Code Showcase.
+            </p>
+
+            <div className="project-links">
+              <a className="button is-link is-light" href="https://github.com/wen-ethan/spatial-computing" target="_blank" rel="noreferrer">GitHub Repo</a>
+              <a className="button is-link is-light" href="https://www.eccchicago.org/2025-showcase.html" target="_blank" rel="noreferrer">Apple EOC Showcase 2025</a>
             </div>
+
+            <a className="back-link" href="/projects">← Back to projects</a>
           </div>
         </div>
-      </div>
+      </section>
+
       <Footer />
     </>
   )
