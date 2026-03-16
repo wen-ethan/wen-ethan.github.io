@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import Background from '../../components/Background'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
@@ -151,7 +150,7 @@ export default function BlogTemplate() {
             <hr className="blog-divider" />
 
             <div className="blog-footer">
-              <Link className="back-link" to="/projects">← Back to projects</Link>
+              <a className="back-link" href="/projects">← Back to projects</a>
             </div>
 
           </div>
