@@ -1,8 +1,10 @@
 /* ---------- Project Page Styles ---------- */
 .project-shell {
+    position: relative;
+    z-index: 2;
     max-width: 1100px;
-    margin: 7rem auto 0;
-    padding: 2rem;
+    margin: 7rem auto 3rem;
+    padding: 2.5rem;
     border-radius: 40px;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(14px);
@@ -32,8 +34,8 @@
 
 .project-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0rem;
     align-items: start;
 }
 
@@ -66,11 +68,10 @@
     font-weight: 500;
     margin-right: 0.6rem;
     margin-top: 1.5rem;
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    transition: filter 0.15s ease, transform 0.15s ease;
 }
 
 .back-link {
-    margin-top: 2rem;
     display: inline-flex;
     align-items: center;
     width: fit-content;
@@ -81,13 +82,35 @@
     -webkit-backdrop-filter: blur(10px);
     color: rgba(255, 255, 255, 0.9);
     opacity: 0.9;
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.blog-link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.55rem 1.05rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0.9;
+    text-decoration: none;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.project-footer {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
 }
 
 .back-link:hover,
+.blog-link:hover,
 .project-links a:hover {
-    opacity: 1;
-    color: #fff;
     transform: translateY(-1px);
 }
 
@@ -106,6 +129,10 @@
     width: 100%;
 }
 
+.carousel-slide.active {
+    display: block;
+}
+
 .carousel-slide img,
 .carousel-slide video {
     width: 100%;
@@ -113,7 +140,7 @@
     display: block;
     aspect-ratio: 4/3;
     border-radius: 24px;
-    object-fit: contain
+    object-fit: contain;
 }
 
 .carousel-prev,
@@ -168,6 +195,8 @@
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.2s;
+    border: none;
+    padding: 0;
 }
 
 .indicator.active {
@@ -177,7 +206,7 @@
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
     .project-shell {
-        margin: 6rem 1rem 0;
+        margin: 6rem 1rem 2rem;
         padding: 1.5rem;
     }
 
