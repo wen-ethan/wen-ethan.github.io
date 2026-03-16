@@ -1,6 +1,6 @@
 {
   "name": "wen-ethan-github-io",
-  "homepage": "https://wen-ethan.github.io",
+  "homepage": "https://wen-ethan.net",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -c wen-ethan.net"
   },
   "dependencies": {
     "bulma": "^1.0.4",
