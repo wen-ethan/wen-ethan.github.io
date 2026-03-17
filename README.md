@@ -1,4 +1,4 @@
-# wen-ethan.github.io
+# wen-ethan.net
 
 Personal portfolio website for Ethan Wen — engineering student interested in embedded systems, hardware–software interfaces, and applied research.
 
