@@ -52,9 +52,6 @@ A notes website for AP Physics C: E&M, built while studying for the AP exam — 
 ### Google Form Autofill
 A Google Apps Script workflow that takes form responses and generates auto-filled, ready-to-submit PDFs. A practical automation tool built to solve a real problem.
 
-### Blog Template
-A reusable blog template designed for easy customization and deployment.
-
 ---
 
 ## Development
