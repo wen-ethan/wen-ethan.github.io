@@ -57,8 +57,8 @@ export default function Resume() {
                   <strong>Hoagie Club</strong> <span className="resume-meta">HoagieHelp Developer · Princeton, NJ</span><br />
                   <span className="resume-meta">Feb 2026 - Present</span>
                   <ul>
-                    <li>Contribute to development of HoagieHelp, an academic support platform featuring Q&A forums and study group coordination.</li>
-                    <li>Develop frontend components using Next.js, React, TypeScript, and Tailwind, integrating with Python-based backend services.</li>
+                    <li>Contributing to full-stack development of HoagieHelp, an academic support platform featuring Q&A forums and study group coordination.</li>
+                    <li>Building frontend components in Next.js, React, TypeScript, and Tailwind, and contributing to backend services in Python.</li>
                   </ul>
                 </div>
 
@@ -66,8 +66,8 @@ export default function Resume() {
                   <strong>Project:VISION, Inc.</strong> <span className="resume-meta">Digital Creators Intern (Spatial Computing) · Chicago, IL</span><br />
                   <span className="resume-meta">Jun 2025 - Jul 2025</span>
                   <ul>
-                    <li>Designed interactive spatial computing experiences using Spline and Reality Composer, creating AR-ready 3D environments and prototypes for deployment on platforms including the Apple Vision Pro.</li>
-                    <li>Selected to showcase project work at Apple's Everyone Can Code Showcase, demonstrating creativity, technical execution, and user-centered design.</li>
+                    <li>Designed AR-ready 3D environments and spatial computing prototypes using Spline and Reality Composer for deployment on Apple Vision Pro; selected to present work at Apple's Everyone Can Code Showcase. </li>
+                    <li>Built <em>Weight of Waste</em>, an AR experience in Reality Composer that confronts users with the scale of personal plastic waste by flooding their environment with an overwhelming cascade of water bottles.</li>
                   </ul>
                 </div>
 
@@ -75,8 +75,7 @@ export default function Resume() {
                   <strong>MIT Beaver Works Summer Institute</strong> <span className="resume-meta">Microelectronics Program Participant</span><br />
                   <span className="resume-meta">Jul 2024 - Aug 2024</span>
                   <ul>
-                    <li>Completed 100-hour microelectronics program covering embedded systems and circuit behavior, involving lectures, labs, and technical assignments.</li>
-                    <li>Designed and presented a functional capstone prototype in a 50-student national cohort.</li>
+                    <li>Collaborated with a 4-person team to build an AI-powered home security system with 180° pan/tilt, face and fingerprint identification, and automated threat-level notifications; presented to a 50-student national cohort.</li>
                   </ul>
                 </div>
               </div>
@@ -90,7 +89,7 @@ export default function Resume() {
                 <div className="resume-entry">
                   <strong>Princeton University Robotics Club</strong> <span className="resume-meta">Member · Princeton, NJ</span><br />
                   <span className="resume-meta">Sept 2025 - Present</span>
-                  <ul><li>Participating in hands-on robotics and computing projects, including PC hardware configuration, firmware workflows, and system-level troubleshooting.</li></ul>
+                  <ul><li>Engaging in hands-on projects involving firmware, hardware configuration, and debugging, including vintage iPod refurbishment. </li></ul>
                 </div>
               </div>
             </div>
