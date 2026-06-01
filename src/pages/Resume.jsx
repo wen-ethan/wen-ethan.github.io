@@ -42,11 +42,6 @@ export default function Resume() {
                   <ul><li>Relevant Coursework: Calculus & Analytic Geometry III; Linear Algebra</li></ul>
                 </div>
                 <div className="resume-entry">
-                  <strong>University of Chicago</strong> <span className="resume-meta">Chicago, IL</span><br />
-                  <span className="resume-meta">Summer Bridge, College Academic Bridge · Jun 2023 – Mar 2025</span>
-                  <ul><li>Relevant Coursework: Readings in World Literature I & II; Physics of Stars: An Introduction</li></ul>
-                </div>
-                <div className="resume-entry">
                   <strong>Walter Payton College Preparatory High School</strong> <span className="resume-meta">Chicago, IL</span><br />
                   <span className="resume-meta">High School Diploma · Jun 2025</span>
                   <ul><li>Awards: 1st in State in CyberPatriots XVI Semifinal Round; 2nd in IEEE SSCS Arduino Contest 2024</li></ul>
@@ -58,6 +53,14 @@ export default function Resume() {
             <div className="project-card resume-card">
               <div className="project-content">
                 <h3 className="project-title">Experience</h3>
+                <div className="resume-entry">
+                  <strong>Hoagie Club</strong> <span className="resume-meta">HoagieHelp Developer · Princeton, NJ</span><br />
+                  <span className="resume-meta">Feb 2026 - Present</span>
+                  <ul>
+                    <li>Contribute to development of HoagieHelp, an academic support platform featuring Q&A forums and study group coordination.</li>
+                    <li>Develop frontend components using Next.js, React, TypeScript, and Tailwind, integrating with Python-based backend services.</li>
+                  </ul>
+                </div>
 
                 <div className="resume-entry">
                   <strong>Project:VISION, Inc.</strong> <span className="resume-meta">Digital Creators Intern (Spatial Computing) · Chicago, IL</span><br />
@@ -65,15 +68,6 @@ export default function Resume() {
                   <ul>
                     <li>Designed interactive spatial computing experiences using Spline and Reality Composer, creating AR-ready 3D environments and prototypes for deployment on platforms including the Apple Vision Pro.</li>
                     <li>Selected to showcase project work at Apple's Everyone Can Code Showcase, demonstrating creativity, technical execution, and user-centered design.</li>
-                  </ul>
-                </div>
-
-                <div className="resume-entry">
-                  <strong>Hoagie Club</strong> <span className="resume-meta">HoagieHelp Developer · Princeton, NJ</span><br />
-                  <span className="resume-meta">Feb 2026 - Present</span>
-                  <ul>
-                    <li>Contribute to development of HoagieHelp, an academic support platform featuring Q&A forums and study group coordination.</li>
-                    <li>Develop frontend components using Next.js, React, TypeScript, and Tailwind, integrating with Python-based backend services.</li>
                   </ul>
                 </div>
 
@@ -98,11 +92,17 @@ export default function Resume() {
                   <span className="resume-meta">Sept 2025 - Present</span>
                   <ul><li>Participating in hands-on robotics and computing projects, including PC hardware configuration, firmware workflows, and system-level troubleshooting.</li></ul>
                 </div>
+              </div>
+            </div>
+
+            {/* Honors */}
+            <div className="project-card resume-card">
+              <div className="project-content">
+                <h3 className="project-title">Honors</h3>
 
                 <div className="resume-entry">
-                  <strong>Cantonese Language and Culture Club</strong> <span className="resume-meta">Cofounder · Chicago, IL</span><br />
-                  <span className="resume-meta">Jul 2024 - Aug 2024</span>
-                  <ul><li>Organized weekly meetings and cultural events to promote Cantonese language learning and community building.</li></ul>
+                  <strong>Chicago Engineers' Foundation</strong> <span className="resume-meta">Engineering Futures Award · $5,000</span><br />
+                  <span className="resume-meta">June 2026</span>
                 </div>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function Resume() {
                 </div>
                 <strong>Technical Skills</strong>
                 <div className="resume-skills mb-3">
-                  {['Python', 'C/C++', 'Arduino / ESP32', 'HTML / CSS / JS', 'LaTeX', 'Git', 'Circuit Fundamentals', 'PCB Design Basics', 'Spline', 'Reality Composer'].map(s => (
+                  {['Python', 'C/C++', 'Arduino / ESP32', 'HTML / CSS / JS', 'LaTeX', 'Git', 'Circuit Fundamentals', 'PCB Design Basics', 'Spline', 'Reality Composer', 'Verilog', 'STM32/STM32CubeIDE'].map(s => (
                     <span key={s}>{s}</span>
                   ))}
                 </div>
