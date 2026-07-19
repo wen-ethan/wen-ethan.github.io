@@ -9,7 +9,7 @@ const slides = [
   { src: '/projects/spatial-computing/tiger_firefighter.png', alt: 'Tiger firefighter AR scene' },
   { src: '/projects/spatial-computing/potted_plant.png', alt: 'Potted plant AR model' },
   { src: '/projects/spatial-computing/spline_vespa.png', alt: 'Spline Vespa 3D model' },
-  { type: 'video', src: '/projects/spatial-computing/spline_animation.mov', poster: '/projects/spatial-computing/spline_animation_thumbnail.png', mimeType: 'video/quicktime' },
+  { type: 'video', src: '/projects/spatial-computing/spline_animation.mp4', poster: '/projects/spatial-computing/spline_animation_thumbnail.png' },
   { type: 'video', src: '/projects/spatial-computing/in-progress_screen_recording.mp4', poster: '/projects/spatial-computing/in-progress_screen_recording_thumbnail.png' },
   { type: 'video', src: '/projects/spatial-computing/final_project_video.mp4', poster: '/projects/spatial-computing/final_project_video_thumbnail.jpg' },
 ]
