@@ -33,18 +33,30 @@ export default function Resume() {
 
                 <div className="resume-entry">
                   <strong>Princeton University</strong> <span className="resume-meta">Princeton, NJ</span><br />
-                  <span className="resume-meta">B.S.E. Electrical & Computer Engineering · Expected May 2029</span>
-                  <ul><li>Cumulative GPA: 3.82</li></ul>
+                  <span className="resume-meta">B.S.E. in Electrical & Computer Engineering · Expected May 2029</span>
+                  <ul>
+                    <li>Cumulative GPA: 3.82</li>
+                    <li>Relevant Coursework: Contemporary Logic Design (Verilog); Introduction to Programming Systems (C) - Fall 2026</li>
+                  </ul>
                 </div>
                 <div className="resume-entry">
                   <strong>City Colleges of Chicago</strong> <span className="resume-meta">Chicago, IL</span><br />
                   <span className="resume-meta">Associate's Degree in General Studies, Early College Program · Jun 2024 – Jul 2025</span>
-                  <ul><li>Relevant Coursework: Calculus & Analytic Geometry III; Linear Algebra</li></ul>
                 </div>
+              </div>
+            </div>
+
+            {/* Projects */}
+            <div className="project-card resume-card">
+              <div className="project-content">
+                <h3 className="project-title">Projects</h3>
+
                 <div className="resume-entry">
-                  <strong>Walter Payton College Preparatory High School</strong> <span className="resume-meta">Chicago, IL</span><br />
-                  <span className="resume-meta">High School Diploma · Jun 2025</span>
-                  <ul><li>Awards: 1st in State in CyberPatriots XVI Semifinal Round; 2nd in IEEE SSCS Arduino Contest 2024</li></ul>
+                  <strong>EchoAssist</strong> <span className="resume-meta">Swift, SwiftUI, CoreML, Apple Intelligence Foundation Models</span>
+                  <ul>
+                    <li>Live speaker-labeled captions generated fully on-device by two streaming CoreML models (Parakeet ASR, Sortformer diarization) synced on a shared audio clock, running ~0.6s behind real time.</li>
+                    <li>On-device transcript summarization via Apple Intelligence Foundation Models and translation into six languages through Apple's Translation framework.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -54,11 +66,28 @@ export default function Resume() {
               <div className="project-content">
                 <h3 className="project-title">Experience</h3>
                 <div className="resume-entry">
+                  <strong>Everyone Can Code Chicago</strong> <span className="resume-meta">iOS App Dev & Machine Learning Program · Chicago, IL</span><br />
+                  <span className="resume-meta">Jun 2026 - Jul 2026</span>
+                  <ul>
+                    <li>Built EchoAssist over a six-week paid cohort program run in partnership between Apple and the City of Chicago.</li>
+                    <li>Advanced to the second round of the program showcase competition, top 12 of 56 teams, judged by Apple engineers.</li>
+                  </ul>
+                </div>
+
+                <div className="resume-entry">
+                  <strong>Relay</strong> <span className="resume-meta">Software Engineer</span><br />
+                  <span className="resume-meta">Jun 2026 - Present</span>
+                  <ul>
+                    <li>Shipped the friendship, concerts, and messaging systems for a five-person cross-platform Flutter music-sharing app.</li>
+                    <li>Authored engineering design documents covering Firestore data modeling, transaction safety, security rules, and abuse and scale analysis.</li>
+                  </ul>
+                </div>
+
+                <div className="resume-entry">
                   <strong>Hoagie Club</strong> <span className="resume-meta">HoagieHelp Developer · Princeton, NJ</span><br />
                   <span className="resume-meta">Feb 2026 - Present</span>
                   <ul>
-                    <li>Contributing to full-stack development of HoagieHelp, an academic support platform featuring Q&A forums and study group coordination.</li>
-                    <li>Building frontend components in Next.js, React, TypeScript, and Tailwind, and contributing to backend services in Python.</li>
+                    <li>Building frontend components in Next.js, React, TypeScript, and Tailwind for a student academic support platform, with contributions to Python backend services.</li>
                   </ul>
                 </div>
 
@@ -66,8 +95,7 @@ export default function Resume() {
                   <strong>Project:VISION, Inc.</strong> <span className="resume-meta">Digital Creators Intern (Spatial Computing) · Chicago, IL</span><br />
                   <span className="resume-meta">Jun 2025 - Jul 2025</span>
                   <ul>
-                    <li>Designed AR-ready 3D environments and spatial computing prototypes using Spline and Reality Composer for deployment on Apple Vision Pro; selected to present work at Apple's Everyone Can Code Showcase. </li>
-                    <li>Built <em>Weight of Waste</em>, an AR experience in Reality Composer that confronts users with the scale of personal plastic waste by flooding their environment with an overwhelming cascade of water bottles.</li>
+                    <li>Built AR prototypes in Spline and Reality Composer for Apple Vision Pro; selected to present at Apple's Everyone Can Code Showcase.</li>
                   </ul>
                 </div>
 
@@ -75,7 +103,7 @@ export default function Resume() {
                   <strong>MIT Beaver Works Summer Institute</strong> <span className="resume-meta">Microelectronics Program Participant</span><br />
                   <span className="resume-meta">Jul 2024 - Aug 2024</span>
                   <ul>
-                    <li>Collaborated with a 4-person team to build an AI-powered home security system with 180° pan/tilt, face and fingerprint identification, and automated threat-level notifications; presented to a 50-student national cohort.</li>
+                    <li>Built an AI-powered home security system with a four-person team: 180° pan/tilt, face and fingerprint identification, and automated threat-level notifications; presented to a 50-student national cohort.</li>
                   </ul>
                 </div>
               </div>
@@ -87,9 +115,9 @@ export default function Resume() {
                 <h3 className="project-title">Activities</h3>
 
                 <div className="resume-entry">
-                  <strong>Princeton University Robotics Club</strong> <span className="resume-meta">Member · Princeton, NJ</span><br />
+                  <strong>Princeton University Robotics Club</strong> <span className="resume-meta">Tinker Member · Princeton, NJ</span><br />
                   <span className="resume-meta">Sept 2025 - Present</span>
-                  <ul><li>Engaging in hands-on projects involving firmware, hardware configuration, and debugging, including vintage iPod refurbishment. </li></ul>
+                  <ul><li>Hands-on firmware, hardware bring-up, and debugging projects, including vintage iPod refurbishment.</li></ul>
                 </div>
               </div>
             </div>
@@ -100,31 +128,42 @@ export default function Resume() {
                 <h3 className="project-title">Honors</h3>
 
                 <div className="resume-entry">
-                  <strong>Chicago Engineers' Foundation</strong> <span className="resume-meta">Engineering Futures Award · $5,000</span><br />
-                  <span className="resume-meta">June 2026</span>
+                  <strong>Chicago Engineers' Foundation</strong> <span className="resume-meta">Engineering Futures Award · $5,000 merit award</span><br />
+                  <span className="resume-meta">2026</span>
+                </div>
+
+                <div className="resume-entry">
+                  <strong>IEEE SSCS Arduino Contest</strong> <span className="resume-meta">2nd Place</span><br />
+                  <span className="resume-meta">2024</span>
                 </div>
               </div>
             </div>
 
-            {/* Skills & Interests */}
+            {/* Skills */}
             <div className="project-card resume-card">
               <div className="project-content">
-                <h3 className="project-title">Skills & Interests</h3>
-                <strong>Language Skills</strong>
+                <h3 className="project-title">Skills</h3>
+                <strong>Hardware & Digital Design</strong>
                 <div className="resume-skills mb-3">
-                  {['English (native)', 'Cantonese (native)', 'Mandarin (professional proficiency)'].map(s => (
+                  {['Verilog', 'Digital Logic Design', 'Arduino / ESP32', 'Circuit Fundamentals'].map(s => (
                     <span key={s}>{s}</span>
                   ))}
                 </div>
-                <strong>Technical Skills</strong>
+                <strong>Programming</strong>
                 <div className="resume-skills mb-3">
-                  {['Python', 'C/C++', 'Arduino / ESP32', 'HTML / CSS / JS', 'LaTeX', 'Git', 'Circuit Fundamentals', 'PCB Design Basics', 'Spline', 'Reality Composer', 'Verilog', 'STM32/STM32CubeIDE'].map(s => (
+                  {['C++', 'Python', 'Swift', 'Dart', 'TypeScript / JavaScript'].map(s => (
                     <span key={s}>{s}</span>
                   ))}
                 </div>
-                <strong>Interests</strong>
+                <strong>Frameworks & Tools</strong>
+                <div className="resume-skills mb-3">
+                  {['SwiftUI', 'CoreML', 'Flutter', 'Firebase / Firestore', 'Next.js / React', 'Git', 'Xcode', 'LaTeX'].map(s => (
+                    <span key={s}>{s}</span>
+                  ))}
+                </div>
+                <strong>Spoken</strong>
                 <div className="resume-skills">
-                  {['Spatial Computing', 'Microelectronics', 'Robotics', 'East Asian Culture', 'Modern Chinese History', '3D Modeling & Design', 'Astrophysics'].map(s => (
+                  {['English (native)', 'Cantonese (native)', 'Mandarin (professional proficiency)'].map(s => (
                     <span key={s}>{s}</span>
                   ))}
                 </div>
