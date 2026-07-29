@@ -4,7 +4,7 @@ import Nav from '../components/Nav'
 export default function Home() {
   return (
     <>
-      <Background video />
+      <Background />
       <Nav />
       <section className="hero is-fullheight">
         <div className="hero-body">

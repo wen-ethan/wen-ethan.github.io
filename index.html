@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!--
+      Home-screen installs only; both are inert in a normal Safari tab. Together
+      with viewport-fit=cover above, these are the only way the page gets real
+      paintable area under the status bar and home indicator: in a browser tab
+      env(safe-area-inset-*) is 0 and Safari's chrome sits outside the web view,
+      so the wave background cannot reach the physical screen edges there.
+    -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>Ethan Wen</title>
   </head>
   <body>
