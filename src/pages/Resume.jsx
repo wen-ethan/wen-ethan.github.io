@@ -34,7 +34,7 @@ export default function Resume() {
                 <div className="resume-entry">
                   <strong>Princeton University</strong> <span className="resume-meta">Princeton, NJ</span><br />
                   <span className="resume-meta">B.S.E. in Electrical & Computer Engineering · Expected May 2029</span>
-                  <ul>
+                  <ul className="resume-list-plain">
                     <li>Cumulative GPA: 3.82</li>
                     <li>Relevant Coursework: Contemporary Logic Design (Verilog); Introduction to Programming Systems (C) - Fall 2026</li>
                   </ul>
