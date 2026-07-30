@@ -35,7 +35,10 @@
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0rem;
+    /* The column separation belongs here, not on .project-content's padding --
+       that class is shared with the cards on Projects/Resume, so its padding is
+       not ours to depend on. Collapses to a smaller gap when the columns stack. */
+    gap: clamp(1.5rem, 4vw, 4rem);
     align-items: start;
 }
 
