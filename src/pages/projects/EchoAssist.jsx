@@ -8,21 +8,24 @@ import '../../styles/project-page.css'
 // Videos are H.264 mp4 transcoded from the HEVC .mov originals -- HEVC in a
 // QuickTime container plays only in Safari, not Chrome or Firefox.
 const slides = [
-  { src: '/projects/echoassist/echoassist_thumbnail.jpeg', alt: 'EchoAssist running on an iPhone' },
+  { src: '/projects/echoassist/echoassist_thumbnail.jpeg', alt: 'EchoAssist Features Overview' },
   {
     type: 'video',
     src: '/projects/echoassist/live_recording.mp4',
     poster: '/projects/echoassist/live_recording_poster.jpg',
+    alt: 'Live captioning with speaker labels in EchoAssist',
   },
   {
     type: 'video',
     src: '/projects/echoassist/translation.mp4',
     poster: '/projects/echoassist/translation_poster.jpg',
+    alt: 'Transcript translation in EchoAssist',
   },
   {
     type: 'video',
     src: '/projects/echoassist/personalize-share.mp4',
     poster: '/projects/echoassist/personalize-share_poster.jpg',
+    alt: 'Personalizing and sharing a transcript in EchoAssist',
   },
   { src: '/projects/echoassist/architecture_diagram.jpeg', alt: 'EchoAssist architecture diagram' },
 ]
