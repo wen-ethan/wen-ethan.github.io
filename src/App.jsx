@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Resume from './pages/Resume'
+import EchoAssist from './pages/projects/EchoAssist'
+import Relay from './pages/projects/Relay'
 import SpatialComputing from './pages/projects/SpatialComputing'
 import ApPhysicsC from './pages/projects/ApPhysicsC'
 import GoogleFormAutofill from './pages/projects/GoogleFormAutofill'
@@ -44,6 +46,8 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/projects/echoassist" element={<EchoAssist />} />
+        <Route path="/projects/relay" element={<Relay />} />
         <Route path="/projects/spatial-computing" element={<SpatialComputing />} />
         <Route path="/projects/ap-physics-c" element={<ApPhysicsC />} />
         <Route path="/projects/google-form-autofill" element={<GoogleFormAutofill />} />

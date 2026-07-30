@@ -5,6 +5,19 @@ import Footer from '../components/Footer'
 
 const projects = [
   {
+    slug: 'echoassist',
+    title: 'EchoAssist',
+    description: 'Real-time iOS captioning app with on-device speech recognition and speaker diarization, built to break communication barriers without sending audio off the phone.',
+    image: '/projects/echoassist/echoassist_thumbnail.jpeg',
+  },
+  {
+    slug: 'relay',
+    title: 'Relay',
+    description: 'Cross-platform Flutter music-sharing app built by a five-person team, where I helpedbuild the friendship, concerts, and messaging systems and the Firestore design docs behind them.',
+    image: '/projects/relay/messaging_ui.png',
+    imageRight: true,
+  },
+  {
     slug: 'spatial-computing',
     title: 'Spatial Computing Portfolio',
     description: 'Interactive AR and spatial computing projects built during my Digital Creators Internship, exploring 3D interaction, animation, and immersive storytelling for platforms like Apple Vision Pro.',

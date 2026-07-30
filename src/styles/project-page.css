@@ -122,7 +122,11 @@
     position: relative;
     width: 100%;
     max-width: 540px;
-    margin: auto;
+    /* Horizontal only. `margin: auto` also sets the block margins to auto, and
+       auto margins take precedence over align-items in grid -- so it centred the
+       carousel vertically in the row and overrode .project-grid's
+       align-items: start, leaving it detached from the top. */
+    margin-inline: auto;
     overflow: hidden;
     border-radius: 24px;
 }
