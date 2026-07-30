@@ -51,10 +51,33 @@
   color: rgba(255, 255, 255, 0.65);
 }
 
+/* Bulma's reset strips list markers, so restore them explicitly */
 .resume-entry ul {
-  margin: 0.25rem 25rem 0 1.1rem;
+  list-style: disc outside;
+  /* Cap the measure by character count rather than a fixed right margin, which
+     collapsed the text into a narrow column at tablet widths */
+  margin: 0.4rem 0 0 1.25rem;
+  max-width: 70ch;
   font-size: 0.95rem;
+  line-height: 1.55;
   color: rgba(255, 255, 255, 0.75);
+}
+
+.resume-entry li {
+  margin-top: 0.35rem;
+  padding-left: 0.2rem;
+  text-wrap: pretty;
+}
+
+.resume-entry li::marker {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Education entries read as plain detail lines, not bulleted accomplishments.
+   Markers are dropped but the indent is left intact so text still lines up
+   with the bulleted sections. */
+.resume-entry ul.resume-list-plain {
+  list-style: none;
 }
 
 /* Skill pills */
@@ -82,6 +105,11 @@
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .resume-entry ul {
-    margin: 0.25rem 0 0 1.1rem;
+    margin-left: 1.15rem;
+  }
+
+  /* Wrapped bullets run together on narrow screens without extra separation */
+  .resume-entry li {
+    margin-top: 0.6rem;
   }
 }

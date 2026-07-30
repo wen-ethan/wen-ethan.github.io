@@ -1,52 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 /* ---------- Base ---------- */
-html, body {
-    height: 100%;
+/* Bulma's reset sets overflow-x:hidden / overflow-y:scroll on html, which makes
+   html its own scroll container instead of letting the viewport scroll. That
+   confines scrolling to html's box rather than letting content run edge to edge
+   under the browser chrome. Forcing both axes visible restores normal viewport
+   scrolling; #root's overflow-x:clip below still contains any wide content. */
+html {
+    overflow-x: visible;
+    overflow-y: visible;
+    /* The flat colour iOS Safari paints into its top/bottom chrome bands. It has
+       to live here rather than on body: Bulma sets a background-color on html,
+       so body's background never propagates to the canvas and instead paints as
+       an ordinary in-flow box -- which comes after negative-z-index layers in
+       paint order and so covered .bg entirely. On html it IS the canvas
+       background, painted beneath everything including .bg.
+
+       Measured against the current composition: the midpoint of its top edge
+       (#7a5a89) and bottom edge (#2d1a44), since one colour serves both ends. */
+    background-color: #543a67;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
     font-family: "Inter", system-ui, sans-serif;
-    background: #42253f;
+    /* Must stay transparent -- see the colour on html above. A background here
+       paints as an in-flow box over .bg instead of becoming the canvas. */
+    background-color: transparent;
     color: white;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 
 #root {
-    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* ---------- Background ---------- */
+/* Height is deliberately over-constrained against inset:0 so `bottom` is ignored
+   and the layer is always the LARGE viewport height. Safari's viewport grows
+   (714 -> 754 on a 16 Pro) as its chrome retracts; sizing to the small viewport
+   would leave a briefly unpainted strip while that animates. Overflow past the
+   viewport is harmless -- it is clipped and pointer-events:none. */
+/* The three broad smooth gradients live here in CSS rather than in the SVG.
+   Rasterising a full-screen SVG gradient makes desktop engines dither each
+   internal tile independently, which shows up as a uniform grid of rectangles
+   (bad in Firefox, milder in Safari/macOS, invisible on iOS where the gradient
+   spans far fewer pixels). Verified side by side: a CSS gradient with identical
+   stops renders clean where the SVG one grids. The SVG still draws the wave band
+   shapes on top -- those are soft, low-contrast, and do not show it.
+
+   58deg matches the SVG's original corner-to-corner direction (atan(1440/900)).
+   The radials are ellipses because SVG objectBoundingBox radii are relative to
+   each axis, so r="62%" was already an ellipse on a non-square viewport. */
 .bg {
     position: fixed;
     inset: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: 0;
+    height: 100lvh;
+    /* Negative, not 0. At z-index 0 this layer sits at the same level as page
+       content and only stays behind it because the content wrappers set
+       z-index 2 -- and iOS Safari re-composites fixed layers when scrolling
+       starts, which flipped this in front of the content mid-scroll (correct on
+       load, wrong as soon as you scrolled). A negative index paints it below all
+       in-flow and positioned content unconditionally, so no compositing
+       reshuffle can reorder it. This is why the flat band colour lives on html
+       (the canvas, painted beneath this) and body must stay transparent. */
+    z-index: -1;
     pointer-events: none;
+    background-image:
+        radial-gradient(ellipse 55% 55% at 88% 6%,
+            rgba(143, 143, 192, 0.55) 0%, rgba(143, 143, 192, 0) 100%),
+        radial-gradient(ellipse 62% 62% at 70% 50%,
+            rgba(162, 65, 111, 0.8) 0%, rgba(162, 65, 111, 0) 100%),
+        /* Lower-left depth. This used to come from a horizontal gradient on each
+           SVG band, but five overlapping semi-transparent gradients compounded
+           their quantisation error and made the grid worst at the bottom, where
+           the overlap is densest. The bands are flat fills now and this restores
+           the same falloff in one clean CSS layer. */
+        radial-gradient(ellipse 85% 70% at 0% 100%,
+            rgba(13, 13, 46, 0.53) 0%, rgba(13, 13, 46, 0) 100%),
+        linear-gradient(58deg,
+            #101033 0%, #3a2154 30%, #6d3566 62%, #7676a4 100%);
 }
 
-.bg-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 18, 32, 0.55);
-    z-index: 1;
-    pointer-events: none;
+/* Vector waves scale to any viewport without resampling */
+.bg-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 /* ---------- Navigation ---------- */
 .nav-wrapper {
     position: fixed;
     z-index: 3;
-    top: 1.5rem;
+    top: calc(1.5rem + env(safe-area-inset-top));
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
     border-radius: 999px;
     padding: 0.4rem;
     display: flex;
     gap: 0.25rem;
-    will-change: transform;
+}
+
+/* Glass pill on a child: a background-color on the fixed .nav-wrapper itself
+   gets sampled for the top chrome tint, and this near-white value was what
+   turned the status-bar strip white. */
+.nav-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: -1;
 }
 
 .nav-item {
@@ -113,17 +182,27 @@ html, body {
     z-index: 2;
 }
 
+/* Query container for the cards below, so they lay themselves out from the
+   space they actually have rather than from the viewport. */
 .projects-grid {
+    container-type: inline-size;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     justify-items: center;
 }
 
-/* ---------- Project card ---------- */
+/* ---------- Project card ----------
+   Stacked by default and switched to a row only when the CARD's own container is
+   actually wide enough (see the @container block below). Keyed to container
+   width rather than viewport width because the old viewport breakpoint left
+   769-1100px as a cramped row: the image would not shrink below 540px, so on a
+   tablet the text was squeezed into ~150px. Sizing on container width handles
+   tablets, split-screen, and any odd aspect ratio without picking breakpoints
+   for each. */
 .project-card {
     display: flex;
-    align-items: stretch;
+    flex-direction: column;
     gap: 1.25rem;
     padding: 1.25rem;
     border-radius: 40px;
@@ -135,7 +214,6 @@ html, body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     transition: transform 0.2s ease, background 0.2s ease;
-    will-change: transform;
 }
 
 .project-card:hover {
@@ -149,9 +227,16 @@ html, body {
 
 /* ---------- Image ---------- */
 .project-image {
-    flex-shrink: 0;
+    /* order:-1 puts the image on top while stacked, including for image-right
+       cards where it comes second in the DOM. Reset in the row layout so DOM
+       order decides which side it sits on. */
+    order: -1;
     width: 100%;
     max-width: 540px;
+    /* Centre it while stacked. Without this the default stretch cannot exceed
+       max-width, so it falls back to flex-start and sits off to the left in any
+       container wider than 540px but still too narrow for the row layout. */
+    align-self: center;
     aspect-ratio: 4 / 3;
     border-radius: 24px;
     overflow: hidden;
@@ -169,11 +254,14 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.25rem 1rem 0 4rem;
+    /* min-width:0 lets this shrink below its longest word instead of forcing the
+       row wider than the card. */
+    min-width: 0;
+    padding: 0.25rem;
 }
 
 .project-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
     color: rgba(255, 255, 255, 0.9);
@@ -183,38 +271,121 @@ html, body {
     font-size: 1rem;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
-    max-width: 38ch;
+    max-width: 60ch;
+    text-wrap: pretty;
 }
 
-/* ---------- Mobile layout ---------- */
-@media (max-width: 768px) {
+/* ---------- Side-by-side layout ----------
+   46rem is the point where an image and a readable column of text both fit at
+   their comfortable minimum (2 x 20rem basis, plus gap and card padding). Below
+   it the card stays stacked, so it never squeezes the text into an unreadable
+   strip the way the old fixed 540px image did. */
+@container (min-width: 46rem) {
     .project-card {
-        flex-direction: column;
+        flex-direction: row;
+        align-items: stretch;
     }
 
-    .project-image {
-        order: -1;
-        width: 100%;
-    }
-
-    .project-title {
-        font-size: 1.75rem;
-    }
-
-    .project-description {
-        max-width: none;
-    }
-
+    /* Both sides may shrink from the same basis, so they share space evenly
+       instead of the image taking a fixed 540px first. */
+    .project-image,
     .project-content {
-        padding: 0.25rem;
+        flex: 1 1 20rem;
     }
+
+    /* DOM order decides which side the image sits on for image-right cards.
+       align-self reverts so it fills the card height as before. */
+    .project-image {
+        order: 0;
+        align-self: auto;
+    }
+
+    /* Scales with the container, so it never eats the text column at the
+       narrow end of this range the way a fixed 4rem did. */
+    .project-content {
+        padding: 0.25rem 1rem 0 clamp(1rem, 4cqi, 4rem);
+    }
+}
+
+@container (min-width: 62rem) {
+    .project-title {
+        font-size: 2rem;
+    }
+}
+
+/* ---------- Other things I've made ----------
+   Deliberately lighter than .project-card: no image, a weaker glass fill, and
+   smaller type, so these read as secondary without being hidden. */
+.side-projects-section {
+    position: relative;
+    z-index: 2;
+    margin-top: 3.5rem;
+}
+
+.side-projects-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.side-projects-note {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+/* auto-fit + minmax reflows at any width on its own, so this needs no
+   breakpoints: two across when there is room, one when there is not. */
+.side-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.side-card {
+    display: block;
+    padding: 1.1rem 1.25rem;
+    border-radius: 24px;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.side-card:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+}
+
+.side-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.3rem;
+}
+
+.side-card-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+    text-wrap: pretty;
 }
 
 /* ---------- Footer ---------- */
 .page-footer {
     position: relative;
     z-index: 2;
-    padding: 2.5rem calc(1.25rem + env(safe-area-inset-left)) 2.5rem calc(1.25rem + env(safe-area-inset-right));
+    /* Bottom inset matters for home-screen installs, where the page really does
+       extend under the home indicator (in a browser tab the insets are 0). */
+    padding: 2.5rem calc(1.25rem + env(safe-area-inset-right))
+             calc(2.5rem + env(safe-area-inset-bottom)) calc(1.25rem + env(safe-area-inset-left));
     text-align: center;
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);

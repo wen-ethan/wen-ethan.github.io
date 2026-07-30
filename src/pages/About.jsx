@@ -27,13 +27,13 @@ export default function About() {
 
           <div className="about-content">
             <p>
-              I'm Ethan, a Princeton University undergraduate pursuing a B.S.E. in Electrical and Computer Engineering, with a strong interest in how hardware and software come together to power modern systems.
+              I'm Ethan, a Princeton University undergraduate pursuing a B.S.E. in Electrical and Computer Engineering, with my focus being on hardware. Specifically, I’m interested in digital design, embedded systems, and the path from RTL to silicon that makes modern chips possible.
             </p>
             <p>
-              I'm especially drawn to microelectronics, embedded systems, spatial computing, and robotics, and I enjoy building projects that sit at the intersection of physical devices and computational intelligence. Through coursework and hands-on work, I focus on translating theory into practical, well-engineered solutions.
+              I'm especially drawn to the problems that live at the boundary between hardware and software: how a processor gets designed, how firmware talks to bare metal, how modern chips like Apple's M-series goes from architecture to physical implementation. I build projects that keep me close to that boundary, currently working with FPGAs and microcontrollers to sharpen my Verilog and embedded C fundamentals.
             </p>
             <p>
-              Beyond the technical side, I care deeply about accessibility and equity in technology; my involvement in community-based advocacy has shaped how I think about engineering decisions and their real-world consequences, particularly around access, representation, and long-term impact. I'm motivated by work that engages real communities and creates meaningful, lasting change.
+              Outside of engineering, I care about who technology is built for and who gets left out. That shapes how I think about the problems worth solving, not just thinking about how to build well, but why it matters.
             </p>
 
             <div className="about-links">

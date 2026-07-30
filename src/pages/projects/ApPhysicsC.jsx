@@ -9,7 +9,7 @@ const slides = [
   { src: '/projects/ap-physics-c/e-m.png', alt: 'E&M notes overview' },
   { src: '/projects/ap-physics-c/electrostatics.png', alt: 'Electrostatics section' },
   { src: '/projects/ap-physics-c/diaelectric.png', alt: 'Dielectrics section' },
-  { src: '/projects/ap-physics-c/practice resources.png', alt: 'Practice resources' },
+  { src: '/projects/ap-physics-c/practice-resources.png', alt: 'Practice resources' },
 ]
 
 export default function ApPhysicsC() {

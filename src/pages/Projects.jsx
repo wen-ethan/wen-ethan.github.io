@@ -5,23 +5,38 @@ import Footer from '../components/Footer'
 
 const projects = [
   {
+    slug: 'echoassist',
+    title: 'EchoAssist',
+    description: 'Real-time iOS captioning app with on-device speech recognition and speaker diarization, built to break communication barriers without sending audio off the phone.',
+    image: '/projects/echoassist/echoassist_thumbnail.jpeg',
+  },
+  {
+    slug: 'relay',
+    title: 'Relay',
+    description: 'Cross-platform Flutter music-sharing app built by a five-person team, where I helped build the friendship, concerts, and messaging systems and the Firestore design docs behind them.',
+    image: '/projects/relay/messaging_ui.png',
+    imageRight: true,
+  },
+  {
     slug: 'spatial-computing',
     title: 'Spatial Computing Portfolio',
     description: 'Interactive AR and spatial computing projects built during my Digital Creators Internship, exploring 3D interaction, animation, and immersive storytelling for platforms like Apple Vision Pro.',
     image: '/projects/spatial-computing/tiger_firefighter.png',
   },
+]
+
+// Smaller side projects. Same pages, but presented compactly so they do not
+// compete with the work above.
+const sideProjects = [
   {
     slug: 'ap-physics-c',
     title: 'AP Physics C Notes',
     description: "Built a clean notes website for AP Physics C: E&M while prepping for the AP exam and learning HTML/CSS along the way.",
-    image: '/projects/ap-physics-c/electrostatics.png',
-    imageRight: true,
   },
   {
     slug: 'google-form-autofill',
     title: 'Google Form Autofill',
     description: 'Created a Google Apps Script workflow that turns form responses into auto-filled, ready-to-submit PDFs.',
-    image: '/projects/google-form-autofill/thumbnail.png',
   },
 ]
 
@@ -60,6 +75,27 @@ export default function Projects() {
                     <img src={p.image} alt={p.title} loading="lazy" />
                   </div>
                 )}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="side-projects-section page-section">
+        <div className="container">
+          <h2 className="side-projects-heading">Other things I&rsquo;ve made</h2>
+          <p className="side-projects-note">
+            Smaller side projects, built for fun.
+          </p>
+          <div className="side-projects-grid">
+            {sideProjects.map((p) => (
+              <Link
+                key={p.slug}
+                to={`/projects/${p.slug}`}
+                className="side-card"
+              >
+                <h3 className="side-card-title">{p.title}</h3>
+                <p className="side-card-description">{p.description}</p>
               </Link>
             ))}
           </div>

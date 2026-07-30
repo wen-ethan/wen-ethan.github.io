@@ -1,3 +1,6 @@
 node_modules
 dist
 .DS_Store
+assets/.DS_Store
+assets/projects/.DS_Store
+SITE_OVERVIEW.md
