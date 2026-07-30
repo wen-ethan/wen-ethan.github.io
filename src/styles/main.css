@@ -313,6 +313,71 @@ body {
     }
 }
 
+/* ---------- Other things I've made ----------
+   Deliberately lighter than .project-card: no image, a weaker glass fill, and
+   smaller type, so these read as secondary without being hidden. */
+.side-projects-section {
+    position: relative;
+    z-index: 2;
+    margin-top: 3.5rem;
+}
+
+.side-projects-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.side-projects-note {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+/* auto-fit + minmax reflows at any width on its own, so this needs no
+   breakpoints: two across when there is room, one when there is not. */
+.side-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.side-card {
+    display: block;
+    padding: 1.1rem 1.25rem;
+    border-radius: 24px;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.side-card:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+}
+
+.side-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.3rem;
+}
+
+.side-card-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+    text-wrap: pretty;
+}
+
 /* ---------- Footer ---------- */
 .page-footer {
     position: relative;
