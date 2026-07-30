@@ -13,7 +13,7 @@ const projects = [
   {
     slug: 'relay',
     title: 'Relay',
-    description: 'Cross-platform Flutter music-sharing app built by a five-person team, where I helpedbuild the friendship, concerts, and messaging systems and the Firestore design docs behind them.',
+    description: 'Cross-platform Flutter music-sharing app built by a five-person team, where I helped build the friendship, concerts, and messaging systems and the Firestore design docs behind them.',
     image: '/projects/relay/messaging_ui.png',
     imageRight: true,
   },
