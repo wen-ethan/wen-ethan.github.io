@@ -39,7 +39,7 @@ export default function SpatialComputing() {
 
             <div className="project-links">
               <a className="button is-link is-light" href="https://github.com/wen-ethan/spatial-computing" target="_blank" rel="noreferrer">GitHub Repo</a>
-              <a className="button is-link is-light" href="https://www.eccchicago.org/2025-showcase.html" target="_blank" rel="noreferrer">Apple EOC Showcase 2025</a>
+              <a className="button is-link is-light" href="https://www.eccchicago.org/2025-showcase.html" target="_blank" rel="noreferrer">Apple ECC Showcase 2025</a>
             </div>
 
             <div className="project-footer">
