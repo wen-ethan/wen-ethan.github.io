@@ -182,17 +182,27 @@ body {
     z-index: 2;
 }
 
+/* Query container for the cards below, so they lay themselves out from the
+   space they actually have rather than from the viewport. */
 .projects-grid {
+    container-type: inline-size;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     justify-items: center;
 }
 
-/* ---------- Project card ---------- */
+/* ---------- Project card ----------
+   Stacked by default and switched to a row only when the CARD's own container is
+   actually wide enough (see the @container block below). Keyed to container
+   width rather than viewport width because the old viewport breakpoint left
+   769-1100px as a cramped row: the image would not shrink below 540px, so on a
+   tablet the text was squeezed into ~150px. Sizing on container width handles
+   tablets, split-screen, and any odd aspect ratio without picking breakpoints
+   for each. */
 .project-card {
     display: flex;
-    align-items: stretch;
+    flex-direction: column;
     gap: 1.25rem;
     padding: 1.25rem;
     border-radius: 40px;
@@ -217,9 +227,16 @@ body {
 
 /* ---------- Image ---------- */
 .project-image {
-    flex-shrink: 0;
+    /* order:-1 puts the image on top while stacked, including for image-right
+       cards where it comes second in the DOM. Reset in the row layout so DOM
+       order decides which side it sits on. */
+    order: -1;
     width: 100%;
     max-width: 540px;
+    /* Centre it while stacked. Without this the default stretch cannot exceed
+       max-width, so it falls back to flex-start and sits off to the left in any
+       container wider than 540px but still too narrow for the row layout. */
+    align-self: center;
     aspect-ratio: 4 / 3;
     border-radius: 24px;
     overflow: hidden;
@@ -237,11 +254,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.25rem 1rem 0 4rem;
+    /* min-width:0 lets this shrink below its longest word instead of forcing the
+       row wider than the card. */
+    min-width: 0;
+    padding: 0.25rem;
 }
 
 .project-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
     color: rgba(255, 255, 255, 0.9);
@@ -251,30 +271,45 @@ body {
     font-size: 1rem;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
-    max-width: 38ch;
+    max-width: 60ch;
+    text-wrap: pretty;
 }
 
-/* ---------- Mobile layout ---------- */
-@media (max-width: 768px) {
+/* ---------- Side-by-side layout ----------
+   46rem is the point where an image and a readable column of text both fit at
+   their comfortable minimum (2 x 20rem basis, plus gap and card padding). Below
+   it the card stays stacked, so it never squeezes the text into an unreadable
+   strip the way the old fixed 540px image did. */
+@container (min-width: 46rem) {
     .project-card {
-        flex-direction: column;
+        flex-direction: row;
+        align-items: stretch;
     }
 
-    .project-image {
-        order: -1;
-        width: 100%;
-    }
-
-    .project-title {
-        font-size: 1.75rem;
-    }
-
-    .project-description {
-        max-width: none;
-    }
-
+    /* Both sides may shrink from the same basis, so they share space evenly
+       instead of the image taking a fixed 540px first. */
+    .project-image,
     .project-content {
-        padding: 0.25rem;
+        flex: 1 1 20rem;
+    }
+
+    /* DOM order decides which side the image sits on for image-right cards.
+       align-self reverts so it fills the card height as before. */
+    .project-image {
+        order: 0;
+        align-self: auto;
+    }
+
+    /* Scales with the container, so it never eats the text column at the
+       narrow end of this range the way a fixed 4rem did. */
+    .project-content {
+        padding: 0.25rem 1rem 0 clamp(1rem, 4cqi, 4rem);
+    }
+}
+
+@container (min-width: 62rem) {
+    .project-title {
+        font-size: 2rem;
     }
 }
 
