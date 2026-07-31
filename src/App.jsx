@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useLayoutEffect, useRef } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/projects/google-form-autofill" element={<GoogleFormAutofill />} />
         <Route path="/projects/blog-template" element={<BlogTemplate />} />
       </Routes>
+      <Analytics />
     </>
   )
 }
