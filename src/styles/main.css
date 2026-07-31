@@ -221,9 +221,11 @@ body {
     transform: translateY(-2px);
 }
 
-.project-card.image-right .project-image {
-    margin-left: auto;
-}
+/* No margin-left:auto for .image-right here on purpose. Auto margins absorb free
+   space and beat align-self, so it overrode the centring below and pushed the
+   image to the right edge while stacked. It is also unnecessary in the row
+   layout: both sides share a flex basis so there is no free space to absorb, and
+   DOM order already puts the image on the right. */
 
 /* ---------- Image ---------- */
 .project-image {
