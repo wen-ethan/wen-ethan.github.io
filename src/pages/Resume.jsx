@@ -36,12 +36,8 @@ export default function Resume() {
                   <span className="resume-meta">B.S.E. in Electrical & Computer Engineering · Expected May 2029</span>
                   <ul className="resume-list-plain">
                     <li>Cumulative GPA: 3.82</li>
-                    <li>Relevant Coursework: Contemporary Logic Design (Verilog); Introduction to Programming Systems (C) - Fall 2026</li>
+                    <li>Fall 2026 Coursework: Contemporary Logic Design (Verilog); Introduction to Programming Systems (C)</li>
                   </ul>
-                </div>
-                <div className="resume-entry">
-                  <strong>City Colleges of Chicago</strong> <span className="resume-meta">Chicago, IL</span><br />
-                  <span className="resume-meta">Associate's Degree in General Studies, Early College Program · Jun 2024 – Jul 2025</span>
                 </div>
               </div>
             </div>
@@ -52,10 +48,20 @@ export default function Resume() {
                 <h3 className="project-title">Projects</h3>
 
                 <div className="resume-entry">
-                  <strong>EchoAssist</strong> <span className="resume-meta">Swift, SwiftUI, CoreML, Apple Intelligence Foundation Models</span>
+                  <strong>Serial-Controlled VGA Character Display</strong> <span className="resume-meta">Verilog, Lattice iCE40-HX1K, Yosys, nextpnr-ice40, IceStorm</span>
                   <ul>
-                    <li>Live speaker-labeled captions generated fully on-device by two streaming CoreML models (Parakeet ASR, Sortformer diarization) synced on a shared audio clock, running ~0.6s behind real time.</li>
-                    <li>On-device transcript summarization via Apple Intelligence Foundation Models and translation into six languages through Apple's Translation framework.</li>
+                    <li>40x30 character grid at 640x480/60 Hz over UART; 4-state parser FSM, per-pixel font ROM fetch, no framebuffer.</li>
+                    <li>585/1280 logic cells, 6/16 block RAMs, closes at 108.5 MHz; per-module benches plus an end-to-end frame compare.</li>
+                  </ul>
+                </div>
+
+                <div className="resume-entry">
+                  <strong>EchoAssist</strong> <span className="resume-meta">Swift, SwiftUI, CoreML, Apple Intelligence Foundation Models</span><br />
+                  <span className="resume-meta">Jun 2026 - Jul 2026</span>
+                  <ul>
+                    <li>Live speaker-labeled accessibility captions generated fully on-device by two streaming CoreML models (Parakeet ASR, Sortformer diarization) synced on a shared audio clock, running ~0.6s behind real time.</li>
+                    <li>On-device summarization via Apple Intelligence Foundation Models and translation into six languages.</li>
+                    <li>Built with a three-person team and submitted to the App Store; review appeal pending.</li>
                   </ul>
                 </div>
               </div>
@@ -66,25 +72,16 @@ export default function Resume() {
               <div className="project-content">
                 <h3 className="project-title">Experience</h3>
                 <div className="resume-entry">
-                  <strong>Everyone Can Code Chicago</strong> <span className="resume-meta">iOS App Dev & Machine Learning Program · Chicago, IL</span><br />
-                  <span className="resume-meta">Jun 2026 - Jul 2026</span>
-                  <ul>
-                    <li>Built EchoAssist over a six-week paid cohort program run in partnership between Apple and the City of Chicago.</li>
-                    <li>Advanced to the second round of the program showcase competition, top 12 of 56 teams, judged by Apple engineers.</li>
-                  </ul>
-                </div>
-
-                <div className="resume-entry">
                   <strong>Relay</strong> <span className="resume-meta">Software Engineer</span><br />
                   <span className="resume-meta">Jun 2026 - Present</span>
                   <ul>
-                    <li>Shipped the friendship, concerts, and messaging systems for a five-person cross-platform Flutter music-sharing app.</li>
+                    <li>Shipped the friendship, concerts, messaging, and gamification systems for a five-person Flutter music-sharing app.</li>
                     <li>Authored engineering design documents covering Firestore data modeling, transaction safety, security rules, and abuse and scale analysis.</li>
                   </ul>
                 </div>
 
                 <div className="resume-entry">
-                  <strong>Hoagie Club</strong> <span className="resume-meta">HoagieHelp Developer · Princeton, NJ</span><br />
+                  <strong>Hoagie Club</strong> <span className="resume-meta">HoagieHelp Developer</span><br />
                   <span className="resume-meta">Feb 2026 - Present</span>
                   <ul>
                     <li>Building frontend components in Next.js, React, TypeScript, and Tailwind for a student academic support platform, with contributions to Python backend services.</li>
@@ -92,18 +89,18 @@ export default function Resume() {
                 </div>
 
                 <div className="resume-entry">
-                  <strong>Project:VISION, Inc.</strong> <span className="resume-meta">Digital Creators Intern (Spatial Computing) · Chicago, IL</span><br />
-                  <span className="resume-meta">Jun 2025 - Jul 2025</span>
+                  <strong>Everyone Can Code Chicago</strong> <span className="resume-meta">iOS App Dev & Machine Learning Program · Chicago, IL</span><br />
+                  <span className="resume-meta">Jun 2026 - Jul 2026</span>
                   <ul>
-                    <li>Built AR prototypes in Spline and Reality Composer for Apple Vision Pro; selected to present at Apple's Everyone Can Code Showcase.</li>
+                    <li>Six-week paid cohort program run in partnership between Apple and the City of Chicago; advanced to the second round of the showcase competition, top 12 of 56 teams, judged by Apple engineers.</li>
                   </ul>
                 </div>
 
                 <div className="resume-entry">
-                  <strong>MIT Beaver Works Summer Institute</strong> <span className="resume-meta">Microelectronics Program Participant</span><br />
-                  <span className="resume-meta">Jul 2024 - Aug 2024</span>
+                  <strong>Project:VISION, Inc.</strong> <span className="resume-meta">Digital Creators Intern (Spatial Computing) · Chicago, IL</span><br />
+                  <span className="resume-meta">Jun 2025 - Jul 2025</span>
                   <ul>
-                    <li>Built an AI-powered home security system with a four-person team: 180° pan/tilt, face and fingerprint identification, and automated threat-level notifications; presented to a 50-student national cohort.</li>
+                    <li>Built AR prototypes in Spline and Reality Composer for Apple Vision Pro; selected to present at the 2025 Everyone Can Code Chicago Showcase.</li>
                   </ul>
                 </div>
               </div>
@@ -115,9 +112,9 @@ export default function Resume() {
                 <h3 className="project-title">Activities</h3>
 
                 <div className="resume-entry">
-                  <strong>Princeton University Robotics Club</strong> <span className="resume-meta">Tinker Member · Princeton, NJ</span><br />
-                  <span className="resume-meta">Sept 2025 - Present</span>
-                  <ul><li>Hands-on firmware, hardware bring-up, and debugging projects, including vintage iPod refurbishment.</li></ul>
+                  <strong>Princeton University Robotics Club</strong> <span className="resume-meta">Princeton, NJ</span><br />
+                  <span className="resume-meta">Tinker Tech Lead, Aug 2026 - Present · Tinker Member, Sept 2025 - Aug 2026</span>
+                  <ul><li>Setting project direction and managing the parts budget for Tinker, the club's hardware subteam; firmware, bring-up, and debugging work including vintage iPod refurbishment.</li></ul>
                 </div>
               </div>
             </div>
@@ -145,7 +142,7 @@ export default function Resume() {
                 <h3 className="project-title">Skills</h3>
                 <strong>Hardware & Digital Design</strong>
                 <div className="resume-skills mb-3">
-                  {['Verilog', 'Digital Logic Design', 'Arduino / ESP32', 'Circuit Fundamentals'].map(s => (
+                  {['Verilog', 'RTL design', 'Yosys / nextpnr / IceStorm', 'Icarus Verilog / GTKWave', 'Lattice iCE40', 'Arduino / ESP32'].map(s => (
                     <span key={s}>{s}</span>
                   ))}
                 </div>
