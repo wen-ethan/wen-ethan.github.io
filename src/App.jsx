@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Resume from './pages/Resume'
+import SerialVgaDisplay from './pages/projects/SerialVgaDisplay'
+import SerialVgaWriteup from './pages/projects/SerialVgaWriteup'
 import EchoAssist from './pages/projects/EchoAssist'
 import Relay from './pages/projects/Relay'
 import SpatialComputing from './pages/projects/SpatialComputing'
@@ -47,6 +49,8 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/projects/serial-vga-display" element={<SerialVgaDisplay />} />
+        <Route path="/projects/serial-vga-display/writeup" element={<SerialVgaWriteup />} />
         <Route path="/projects/echoassist" element={<EchoAssist />} />
         <Route path="/projects/relay" element={<Relay />} />
         <Route path="/projects/spatial-computing" element={<SpatialComputing />} />

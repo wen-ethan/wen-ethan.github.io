@@ -134,6 +134,37 @@
     margin-bottom: 1.25rem;
 }
 
+/* Bulma's reset strips list-style and padding, so both are restored here
+   rather than inherited. Markers sit outside the text block so wrapped lines
+   stay aligned with the first line. */
+.blog-body ul,
+.blog-body ol {
+    margin: 0 0 1.25rem 1.35rem;
+    padding: 0;
+    list-style-position: outside;
+}
+
+.blog-body ul {
+    list-style-type: disc;
+}
+
+.blog-body ol {
+    list-style-type: decimal;
+}
+
+.blog-body li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.35rem;
+}
+
+.blog-body li::marker {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.blog-body li:last-child {
+    margin-bottom: 0;
+}
+
 /* Inline images */
 .blog-image {
     margin: 1.75rem 0;

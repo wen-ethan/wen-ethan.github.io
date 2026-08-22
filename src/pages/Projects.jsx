@@ -5,29 +5,34 @@ import Footer from '../components/Footer'
 
 const projects = [
   {
+    slug: 'serial-vga-display',
+    title: 'Serial VGA Display',
+    description: 'UART-controlled text display on an iCE40 FPGA, where a 40×30 character grid is drawn pixel by pixel as the VGA beam scans.',
+    image: '/projects/serial-vga-display/serial_vga_display_thumbnail.jpeg',
+  },
+  {
     slug: 'echoassist',
     title: 'EchoAssist',
     description: 'Real-time iOS captioning app with on-device speech recognition and speaker diarization, built to break communication barriers without sending audio off the phone.',
     image: '/projects/echoassist/echoassist_thumbnail.jpeg',
+    imageRight: true,
   },
   {
     slug: 'relay',
     title: 'Relay',
     description: 'Cross-platform Flutter music-sharing app built by a five-person team, where I helped build the friendship, concerts, and messaging systems and the Firestore design docs behind them.',
     image: '/projects/relay/messaging_ui.png',
-    imageRight: true,
-  },
-  {
-    slug: 'spatial-computing',
-    title: 'Spatial Computing Portfolio',
-    description: 'Interactive AR and spatial computing projects built during my Digital Creators Internship, exploring 3D interaction, animation, and immersive storytelling for platforms like Apple Vision Pro.',
-    image: '/projects/spatial-computing/tiger_firefighter.png',
   },
 ]
 
 // Smaller side projects. Same pages, but presented compactly so they do not
 // compete with the work above.
 const sideProjects = [
+  {
+    slug: 'spatial-computing',
+    title: 'Spatial Computing Portfolio',
+    description: 'Interactive AR and spatial computing projects built during my Digital Creators Internship, exploring 3D interaction, animation, and immersive storytelling for platforms like Apple Vision Pro.',
+  },
   {
     slug: 'ap-physics-c',
     title: 'AP Physics C Notes',

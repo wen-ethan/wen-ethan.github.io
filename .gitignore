@@ -4,3 +4,9 @@ dist
 assets/.DS_Store
 assets/projects/.DS_Store
 SITE_OVERVIEW.md
+
+# Local authoring files, not part of the deployed site.
+# content/ holds the Markdown sources for blog writeups; tools/ holds the
+# scripts that generate page components from them.
+content
+tools

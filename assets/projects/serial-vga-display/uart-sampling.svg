@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img"
+     aria-label="Eight sample points at clock offsets 325 through 1844, all falling inside a single 2604-clock start bit at 9600 baud">
+  <g font-family="Inter, system-ui, sans-serif" fill="#efeaf6">
+
+    <text x="40" y="36" font-size="17" font-weight="600">Receiver at 115200 sampling a 9600-baud line</text>
+
+    <g stroke="#efeaf6" stroke-opacity="0.16" stroke-dasharray="4 6">
+      <line x1="60" y1="80"  x2="870" y2="80"/>
+      <line x1="60" y1="170" x2="870" y2="170"/>
+    </g>
+    <g font-size="12" fill-opacity="0.55" text-anchor="end">
+      <text x="50" y="84">1</text>
+      <text x="50" y="174">0</text>
+    </g>
+
+    <!-- one 9600 start bit: falling edge at 150, low for 2604 clocks, rising at 810 -->
+    <path d="M60,80 L150,80 L150,170 L810,170 L810,80 L870,80"
+          fill="none" stroke="#efeaf6" stroke-width="2.5"/>
+
+    <g stroke="#c9b6ea" stroke-width="1.5">
+      <line x1="150" y1="212" x2="810" y2="212"/>
+      <line x1="150" y1="205" x2="150" y2="219"/>
+      <line x1="810" y1="205" x2="810" y2="219"/>
+    </g>
+    <text x="480" y="236" font-size="14" text-anchor="middle" fill="#c9b6ea">
+      one 9600 start bit = 2604 clocks
+    </text>
+
+    <!-- eight data-bit samples, offsets 325..1844, 217 clocks apart -->
+    <g stroke="#f5c76e" stroke-width="1.5" stroke-dasharray="3 4">
+      <line x1="232" y1="98" x2="232" y2="170"/>
+      <line x1="287" y1="98" x2="287" y2="170"/>
+      <line x1="342" y1="98" x2="342" y2="170"/>
+      <line x1="397" y1="98" x2="397" y2="170"/>
+      <line x1="452" y1="98" x2="452" y2="170"/>
+      <line x1="507" y1="98" x2="507" y2="170"/>
+      <line x1="562" y1="98" x2="562" y2="170"/>
+      <line x1="617" y1="98" x2="617" y2="170"/>
+    </g>
+    <g fill="#f5c76e">
+      <circle cx="232" cy="170" r="4.5"/>
+      <circle cx="287" cy="170" r="4.5"/>
+      <circle cx="342" cy="170" r="4.5"/>
+      <circle cx="397" cy="170" r="4.5"/>
+      <circle cx="452" cy="170" r="4.5"/>
+      <circle cx="507" cy="170" r="4.5"/>
+      <circle cx="562" cy="170" r="4.5"/>
+      <circle cx="617" cy="170" r="4.5"/>
+    </g>
+    <g font-size="12" fill="#f5c76e" text-anchor="middle">
+      <text x="232" y="90">325</text>
+      <text x="617" y="90">1844</text>
+      <text x="424" y="90" fill-opacity="0.7">eight data bits, 217 clocks apart</text>
+    </g>
+
+    <text x="713" y="152" font-size="12" text-anchor="middle" fill-opacity="0.6">
+      still the start bit
+    </text>
+
+    <text x="480" y="274" font-size="14" text-anchor="middle" fill-opacity="0.78">
+      every sample reads 0, so the byte is 0x00
+    </text>
+  </g>
+</svg>
