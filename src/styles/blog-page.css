@@ -55,6 +55,17 @@
     object-fit: cover;
 }
 
+/* Opt-in crop anchors, set per post via `hero_position` in its Markdown
+   frontmatter. A source photo taller than ~2.68:1 gets cropped to max-height,
+   and the default centred crop can cut the subject out of a 4:3 photo. */
+.blog-hero.hero-top img {
+    object-position: top;
+}
+
+.blog-hero.hero-bottom img {
+    object-position: bottom;
+}
+
 /* Two-column layout: TOC + article */
 .blog-layout {
     display: grid;

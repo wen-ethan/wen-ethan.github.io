@@ -59,7 +59,7 @@ export default function SerialVgaWriteup() {
           </div>
         </header>
 
-        <div className="blog-hero">
+        <div className="blog-hero hero-top">
           <img src="/projects/serial-vga-display/serial_vga_display_thumbnail.jpeg" alt="The Go Board driving text on a VGA monitor" />
         </div>
 
