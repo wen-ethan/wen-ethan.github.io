@@ -1,6 +1,6 @@
 # wen-ethan.net
 
-Personal portfolio website for Ethan Wen — engineering student interested in embedded systems, hardware–software interfaces, and applied research.
+Personal portfolio website for Ethan Wen — Princeton ECE student interested in embedded systems, digital design, and hardware–software interfaces.
 
 Live at: [wen-ethan.net](https://wen-ethan.net/) (deployed via Vercel)
 
@@ -28,6 +28,7 @@ This site has gone through several redesigns and one rebuild, each iteration dri
 | [Vite](https://vitejs.dev/) | Fast dev server and build tooling |
 | [React Router DOM](https://reactrouter.com/) | Client-side SPA routing |
 | [Bulma](https://bulma.io/) | CSS framework for layout and styling |
+| [Vercel Analytics](https://vercel.com/analytics) | Pageview tracking |
 | [Vercel](https://vercel.com/) | Hosting and continuous deployment |
 
 ---
@@ -36,21 +37,25 @@ This site has gone through several redesigns and one rebuild, each iteration dri
 
 - **Home** — Landing page with a brief intro
 - **About** — Background and interests
-- **Projects** — Showcase of notable work (see below)
-- **Resume** — Professional summary and experience
+- **Projects** — Featured work up top, smaller side projects below
+- **Resume** — Education, projects, experience, activities, honors, and skills, with a PDF download
+- **Project pages** — One detail page per project at `/projects/<slug>`, plus long-form writeups at `/projects/<slug>/writeup`
 
 ---
 
 ## Featured Projects
 
-### Spatial Computing Portfolio
-Interactive AR and spatial computing projects built during a Digital Creators Internship, exploring 3D interaction, animation, and immersive storytelling for platforms like Apple Vision Pro.
+### Serial VGA Display
+UART-controlled text display on a Lattice iCE40 FPGA, where a 40×30 character grid is drawn pixel by pixel as the VGA beam scans, with no framebuffer. Includes a full engineering writeup.
 
-### AP Physics C Notes
-A notes website for AP Physics C: E&M, built while studying for the AP exam — one of the early projects that got the ball rolling on learning web development.
+### EchoAssist
+Real-time iOS captioning app with on-device speech recognition and speaker diarization, built to break communication barriers without sending audio off the phone.
 
-### Google Form Autofill
-A Google Apps Script workflow that takes form responses and generates auto-filled, ready-to-submit PDFs. A practical automation tool built to solve a real problem.
+### Relay
+Cross-platform Flutter music-sharing app built by a five-person team; I helped build the friendship, concerts, and messaging systems and the Firestore design docs behind them.
+
+### Side Projects
+Spatial Computing Portfolio (AR work for Apple Vision Pro), AP Physics C Notes, and Google Form Autofill; earlier work, kept on the site but presented compactly.
 
 ---
 
@@ -72,15 +77,20 @@ npm run preview
 
 The dev server runs at `http://localhost:5173` by default.
 
+**Note on static files:** `vite.config.js` sets `publicDir: 'assets'`, so static files live in [`assets/`](assets/) rather than the conventional `public/`. Reference them with root-absolute paths — `/headshot.jpg`, `/projects/serial-vga-display/render.png`, `/Ethan_Wen_Resume.pdf`.
+
 ---
 
 ## Project Structure
 
 ```
+assets/                 # Static files (served at web root; NOT public/)
+└── projects/           # Per-project images and video, one folder per slug
 src/
-├── components/         # Shared UI components (Nav, Footer, Carousel, Background)
+├── components/         # Shared UI (Nav, Footer, Carousel, Background)
 ├── pages/              # Top-level page views (Home, About, Projects, Resume)
-│   └── projects/       # Individual project detail pages
+│   └── projects/       # Individual project detail and writeup pages
+├── styles/             # Plain CSS, one file per page type
 ├── App.jsx             # Route definitions and scroll-to-top behavior
 └── main.jsx            # Application entry point
 ```

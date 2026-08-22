@@ -44,7 +44,6 @@ export default function SpatialComputing() {
 
             <div className="project-footer">
               <Link className="back-link" to="/projects">← Back to projects</Link>
-              <Link className="blog-link" to="/projects/blog-template">Read Documentation →</Link>
             </div>
           </div>
         </div>
