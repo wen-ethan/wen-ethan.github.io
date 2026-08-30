@@ -40,6 +40,10 @@ export default function Relay() {
               Each system started as an engineering design doc before any code — how the data is modeled in Firestore, which writes have to be transactional, what the security rules enforce, and how the feature holds up under abuse or unexpected scale. One doc caught a set of non-transactional writes that would have left records inconsistent in production. Writing the docs first has been the most useful habit on the project.
             </p>
 
+            <div className="project-links">
+              <a className="button is-link is-light" href="https://relay-app.xyz/" target="_blank" rel="noreferrer">Live Web Build</a>
+            </div>
+
             <div className="project-footer">
               <Link className="back-link" to="/projects">← Back to projects</Link>
             </div>
